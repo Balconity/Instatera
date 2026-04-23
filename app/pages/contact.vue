@@ -1,5 +1,16 @@
 <script setup lang="ts">
 
+const img = useImage()
+
+// Generiranje optimiziranog URL-a za pozadinsku sliku
+const backgroundUrl = computed(() => {
+  return img('/images/contact.jpg', {
+    width: 1920,
+    quality: 80,
+    format: 'webp'
+  })
+});
+
 const contactDetails = [
   {
     icon: 'i-heroicons-phone',
@@ -38,7 +49,7 @@ const workingHours = [
   <div class="pt-16">
 
     <section class="hero-section-wrapper">
-      <div class="hero-bg-overlay bg-emerald-50 dark:bg-emerald-950/20"></div> <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="hero-bg-overlay bg-emerald-50 dark:bg-emerald-950/20" :style="{ backgroundImage: `url('${backgroundUrl}')` }"></div> <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="text-center">
         <div class="backdrop-blur-lg bg-white/40 dark:bg-gray-900/40 rounded-3xl p-12 border border-white/30 dark:border-gray-700 shadow-xl inline-block">
           <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">

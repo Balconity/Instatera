@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+const img = useImage();
+
 useSeoMeta({
   title: 'O meni | In Statera',
   description: 'Saznajte više o Danijeli, prvostupnici fizioterapije i certificiranoj Bowen terapeutkinji. Vaš partner u zdravlju i oporavku u Zagrebu.',
@@ -7,6 +9,22 @@ useSeoMeta({
   ogDescription: 'Saznajte više o Danijeli, prvostupnici fizioterapije i certificiranoj Bowen terapeutkinji.',
   ogImage: '/images/portret.webp',
 })
+
+const backgroundUrl = computed(() => {
+  return img('/images/prostor.jpg', {
+    width: 1920,
+    quality: 80,
+    format: 'webp'
+  })
+});
+
+const heroBackgroundUrl = computed(() => {
+  return img('/images/prostor_2.jpg', {
+    width: 1920,
+    quality: 80,
+    format: 'webp'
+  })
+});
 
 const biographyParagraphs = [
   'Moje ime je Danijela, prvostupnica sam fizioterapije kao i certificirana Bowen terapeutkinja.',
@@ -28,9 +46,8 @@ const stats = [
 
 <template>
   <div class="pt-16">
-
     <section class="hero-section-wrapper">
-      <div class="hero-bg-overlay"></div>
+      <div class="hero-bg-overlay" :style="{ backgroundImage: `url('${heroBackgroundUrl}')` }"></div>
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <div class="backdrop-blur-lg bg-white/40 dark:bg-gray-900/40 rounded-3xl p-12 border border-white/30 dark:border-gray-700 shadow-2xl inline-block">
@@ -61,11 +78,8 @@ const stats = [
           </div>
 
           <div class="row-start-1 glass-card">
-<!--            <img-->
-<!--                src="/images/portret.webp"-->
-<!--                alt="Danijela - Fizioterapeut"-->
-<!--                class="w-full object-cover rounded-xl mb-6 shadow-md"-->
-<!--            >-->
+
+            <NuxtImg src="/images/portrait.jpg" alt="" class="w-full h-auto rounded-lg" />
 
             <div class="space-y-4">
               <div
@@ -84,7 +98,7 @@ const stats = [
     </section>
 
     <section class="hero-section-wrapper">
-      <div class="hero-bg-overlay"></div>
+      <div class="hero-bg-overlay" :style="{ backgroundImage: `url('${backgroundUrl}')` }"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="glass-card">
           <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Spremni?</h2>
@@ -98,13 +112,12 @@ const stats = [
             <a href="tel:+385955053943" class="btn-primary">
               Nazovite
             </a>
-            <NuxtLinkLocale to="/price-list" class="btn-glass">
+            <NuxtLink to="/price-list" class="btn-glass">
               Pogledajte cjenik
-            </NuxtLinkLocale>
+            </NuxtLink>
           </div>
         </div>
       </div>
     </section>
-
   </div>
 </template>

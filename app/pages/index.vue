@@ -1,4 +1,14 @@
 <script setup lang="ts">
+
+const img = useImage()
+
+const footerBackgroundUrl = computed(() => {
+  return img('/images/prostor.jpg', {
+    width: 1920,
+    quality: 80,
+    format: 'webp'
+  })
+});
 // --- Postojeći podaci ---
 const features = [
   {
@@ -108,11 +118,7 @@ const reviews = [
           <div class="flex flex-col items-center">
             <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-8">Ponosni smo na kvalitetu naše usluge</h2>
             <div class="backdrop-blur-lg bg-emerald-50/50 dark:bg-gray-800/40 rounded-2xl p-4 border border-emerald-100 dark:border-gray-700 shadow-lg inline-block">
-              <img
-                  src="https://www.sredime.hr/image/topsalon2026.png"
-                  alt="Top Salon 2026 Award"
-                  class="h-40 md:h-56 w-auto object-contain hover:scale-105 transition-transform duration-300"
-              />
+              <NuxtImg src="/images/topsalon2026.png" alt="Top Salon 2026 Award" class="h-40 md:h-56 w-auto object-contain hover:scale-105 transition-transform duration-300" />
             </div>
             <p class="mt-6 text-gray-600 dark:text-gray-400 font-medium">Izbor zadovoljnih klijenata na SrediMe portalu</p>
           </div>
@@ -128,7 +134,7 @@ const reviews = [
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <NuxtLinkLocale
+            <NuxtLink
                 v-for="treatment in featuredTreatments"
                 :key="treatment.title"
                 :to="treatment.link"
@@ -146,17 +152,17 @@ const reviews = [
                 <span class="text-sm font-medium">Saznajte više</span>
                 <UIcon name="i-heroicons-arrow-right" class="ml-2 h-4 w-4" />
               </div>
-            </NuxtLinkLocale>
+            </NuxtLink>
           </div>
 
           <div class="text-center mt-12">
-            <NuxtLinkLocale
+            <NuxtLink
                 to="/treatments"
                 class="inline-flex items-center px-8 py-4 bg-emerald-600 text-white font-semibold rounded-full hover:bg-emerald-700 transition-all duration-200 shadow-lg hover:shadow-xl group"
             >
               Pogledajte sve tretmane
               <UIcon name="i-heroicons-arrow-right" class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </NuxtLinkLocale>
+            </NuxtLink>
           </div>
 
         </div>
@@ -206,8 +212,8 @@ const reviews = [
         </div>
       </section>
 
-      <section class="py-20 bg-cover bg-center bg-no-repeat relative">
-        <div class="absolute inset-0 bg-emerald-50/50 -z-10"></div>
+      <section class="py-20 bg-cover bg-center bg-no-repeat relative" :style="{ backgroundImage: `url('${footerBackgroundUrl}')` }">
+        <div class="absolute inset-0 bg-emerald-50/50 -z-10" ></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div class="backdrop-blur-lg bg-white/60 rounded-2xl p-8 border border-white/30 shadow-xl">
             <h2 class="text-3xl font-bold text-gray-800 mb-6">Spremni?</h2>

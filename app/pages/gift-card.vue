@@ -1,14 +1,30 @@
 <script setup lang="ts">
+const img = useImage()
 
-  useSeoMeta({
-    title: 'Poklon bon | In Statera',
-    description: 'Tražite savršen poklon? Poklonite zdravlje i opuštanje! Naručite In Statera poklon bon za masaže i fizioterapijske tretmane.',
-    ogTitle: 'Poklon Bon | In Statera',
-    ogDescription: 'Iznenadite dragu osobu ulaznicom u svijet zdravlja i dobrobiti.',
-    ogImage: '/images/poklon-bon.webp',
-  });
+useSeoMeta({
+  title: 'Poklon bon | In Statera',
+  description: 'Tražite savršen poklon? Poklonite zdravlje i opuštanje! Naručite In Statera poklon bon za masaže i fizioterapijske tretmane.',
+  ogTitle: 'Poklon Bon | In Statera',
+  ogDescription: 'Iznenadite dragu osobu ulaznicom u svijet zdravlja i dobrobiti.',
+  ogImage: '/images/poklon-bon.webp',
+});
 
-// Prednosti izdvojene u array za čišći kod
+const backgroundUrl = computed(() => {
+  return img('/images/gift-card.jpg', {
+    width: 1920,
+    quality: 80,
+    format: 'webp'
+  })
+});
+
+const footerBackgroundUrl = computed(() => {
+  return img('/images/prostor.jpg', {
+    width: 1920,
+    quality: 80,
+    format: 'webp'
+  })
+});
+
 const benefits = [
   'Valjan je 3 mjeseca od datuma kupovine',
   'Može se koristiti za sve tretmane',
@@ -27,9 +43,15 @@ const infoList = [
   <div class="pt-16">
 
     <section class="hero-section-wrapper">
-      <div class="hero-bg-overlay bg-emerald-50 dark:bg-emerald-950/20"></div> <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
-      <div class="text-center"></div>
-    </div>
+      <div
+          class="hero-bg-overlay"
+          :style="{ backgroundImage: `url('${backgroundUrl}')` }"
+      ></div>
+
+      <div class="absolute inset-0"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-32 text-center">
+      </div>
     </section>
 
     <section class="py-20 bg-white dark:bg-gray-950">
@@ -60,7 +82,6 @@ const infoList = [
 
     <section class="py-20 bg-gray-50 dark:bg-gray-900">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
         <div class="glass-card text-left">
           <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6 text-center">
             Naručite poklon bon
@@ -73,7 +94,6 @@ const infoList = [
               </p>
 
               <GiftCardForm />
-
             </div>
           </div>
 
@@ -96,32 +116,31 @@ const infoList = [
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
     <section class="hero-section-wrapper">
-      <div class="hero-bg-overlay bg-emerald-50 dark:bg-emerald-950/20"></div> <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
-      <div class="glass-card">
-        <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Spremni za tretman?</h2>
-        <p class="text-lg text-gray-800 dark:text-gray-200 font-medium mb-8">
-          Rezervirajte svoj termin ili se obratite za dodatne informacije
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://www.sredime.hr/zagreb/salon-in-statera" target="_blank" class="btn-primary">
-            Rezervirajte tretman
-          </a>
-          <a href="tel:+385955053943" class="btn-primary">
-            Nazovite
-          </a>
-          <NuxtLinkLocale to="/price-list" class="btn-glass">
-            Pogledajte cjenik
-          </NuxtLinkLocale>
+      <div class="hero-bg-overlay bg-emerald-50 dark:bg-emerald-950/20" :style="{ backgroundImage: `url('${footerBackgroundUrl}')` }"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
+        <div class="glass-card">
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Spremni za tretman?</h2>
+          <p class="text-lg text-gray-800 dark:text-gray-200 font-medium mb-8">
+            Rezervirajte svoj termin ili se obratite za dodatne informacije
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://www.sredime.hr/zagreb/salon-in-statera" target="_blank" class="btn-primary">
+              Rezervirajte tretman
+            </a>
+            <a href="tel:+385955053943" class="btn-primary">
+              Nazovite
+            </a>
+            <NuxtLink to="/price-list" class="btn-glass">
+              Pogledajte cjenik
+            </NuxtLink>
+          </div>
         </div>
       </div>
-    </div>
     </section>
-
   </div>
 </template>

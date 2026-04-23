@@ -23,13 +23,13 @@ useSeoMeta({
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 
         <UCard
             v-for="treatment in treatments"
             :key="treatment.id"
             class="flex flex-col h-full overflow-hidden hover:shadow-xl transition-shadow duration-300 dark:border-gray-800"
-            :ui="{ body: { padding: '' } }"
+            :ui="{ body: 'p-0 sm:p-0' }"
         >
           <div class="relative h-56 bg-gray-200 dark:bg-gray-800">
             <img

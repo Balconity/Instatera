@@ -1,4 +1,16 @@
 <script setup lang="ts">
+
+const img = useImage()
+
+// Generiranje optimiziranog URL-a za pozadinsku sliku
+const backgroundUrl = computed(() => {
+  return img('/images/prostor.jpg', {
+    width: 1920,
+    quality: 80,
+    format: 'webp'
+  })
+});
+
 // Data for the pricing categories
 const pricingCategories = [
   {
@@ -81,7 +93,7 @@ const additionalInfo = [
   <div class="pt-16">
 
     <section class="relative py-20 overflow-hidden hero-section">
-      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/about.webp');"></div>
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" :style="{ backgroundImage: `url('${backgroundUrl}')` }"></div>
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <div class="backdrop-blur-lg bg-white/40 rounded-3xl p-12 border border-white/30 shadow-2xl inline-block">
