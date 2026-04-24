@@ -40,9 +40,25 @@ const featuredTreatments = [
 const reviews = [
   { name: 'Mateja', initial: 'M', treatment: 'Medicinska masaža', text: 'Ugodan ambijent, djelatnica stručna i pristupačna, masaža odlična! Puno mi je pomoglo kod ukočenog vrata! Preporučam svakome i dolazim sigurno ponovno! 😍' },
   { name: 'Kristina', initial: 'K', treatment: 'Deep lifting + radiofrekvencija lica', text: 'Odlično iskustvo, vlasnica je vrlo pristupačna i temeljita. Tretman radiofrekvencijom i Deep lifting masaža lica su vrlo opuštajući, nakon tretmana se vidi razlika u licu. Preporučila bih tretman svakome :)' },
-  { name: 'Vesna', initial: 'V', treatment: 'Bowen', text: 'Na bowen terapiju došla sam iz radoznalosti, zbog bolova u leđima stalno tražim pomoć. Divna djevojka Danijela mi je objasnila što ćemo raditi, samo sam se trebala opustiti i s povjerenjem predati svoje tijelo da napravi što zna.' },
-  { name: 'Marija', initial: 'M', treatment: 'Medicinska masaža', text: 'Dugo sam bila u potrazi za mjestom na koje mogu ici redovito, a da sam stvarno zadovoljna. Cura koja radi je također fizioterapeut, jako draga i pristupacna. Nakon masaze kao da hodam po oblacima 🥹' },
-  { name: 'Saša', initial: 'S', treatment: 'Terapijske vježbe + tecar', text: 'Ne želite li ljubazan i profesionalan pristup iskusnog fizioterapeuta uz izvrsnu i pozitivnu komunikaciju u ugodnom ambijentu i uz to izvrsne rezultate nakon termina, onda svakako zaobiđite InStater i majstoricu Danijelu. Izvrsno iskustvo!' }
+  { name: 'Vesna', initial: 'V', treatment: 'Bowen', text: 'Na bowen terapiju došla sam iz radoznalosti, zbog bolova u leđima stalno tražim pomoć. Divna djevojka Danijela mi je objasnila što ćemo raditi, samo sam se trebala opustiti i s povjerenjem predati svoje tijelo da napravi što zna. Oduševljena sam rezultatima.' },
+  { name: 'Marija', initial: 'M', treatment: 'Medicinska masaža', text: 'Dugo sam bila u potrazi za mjestom na koje mogu ici redovito, a da sam stvarno zadovoljna. Cura koja radi je također fizioterapeut, jako draga i pristupacna. Ono sto me iznenadilo je da kad sam dosla prvi put, sjela sam i popricale smo o problemu – slusala je i to primjenila. Nije masirala po nekakvoj naucenoj spranci. Nakon masaze kao da hodam po oblacima 🥹' },
+  { name: 'Iva', initial: 'I', treatment: 'Deep lifting + radiofrekvencija lica', text: 'Sve je uistinu izvrsno; od ambijenta, higijene, stručnosti, pedantnosti, uslužnosti, kvalitete usluge. Jako sam zadovoljna!' },
+  { name: 'Mateja', initial: 'M', treatment: 'Bowen', text: 'Odlučila sam se na Bowen terapiju zbog bolova na mjestu uboda spinalne anestezije te smanjenog osjeta na rezu i oko njega. Nakon odrađene tri terapije bolovi su se znatno smanjili, a ubrzo nakon i potpuno nestali. Osjet se također poboljšao te je ožiljak postao mekaniji. Imam jako pozitivno iskustvo te bih svakome preporučila Bowen terapiju.' },
+  { name: 'Marina', initial: 'M', treatment: 'Bowen', text: 'Ljubaznost vrhunska, smirenost (a toga nam danas pogotovo treba), sve čisto, mirisno, sama masaža preeeeeekrasna. Vlasnica salona sve objasni, lijepo i pristupačno. Onaj osjećaj kad vidite da osoba zna što radi i kako radi, te zašto radi. Od početka do kraja iskustvo koje si svatko treba priuštiti, čak su i rezultati itekako vidljivi.' },
+  { name: 'Sanda', initial: 'S', treatment: 'Medicinska masaža', text: 'Odlično iskustvo sa Bowen terapijom. Jednostavno naručivanje i dogovor oko termina, ugodna i opuštena atmosfera, odlični rezultati terapije. Svaka preporuka!' },
+  { name: 'Tina', initial: 'T', treatment: 'Medicinska masaža', text: 'Gospođa je jako ugodna i srdačna. Prvo me pitala iz kojih razloga dolazim na masažu, koji je problem i kakvu masažu preferiram prije nego smo krenuli uopće u drugu prostoriju. Sama masaža je bila odlična.' },
+  { name: 'Jelena', initial: 'J', treatment: 'Medicinska masaža', text: 'Vrlo ugodno iskustvo. Usluga je bila profesionalna, stručna i s puno pažnje. Danijela je izuzetno ljubazna i profesionalna, a prostor čist i ugodan. Sve preporuke!' },
+  { name: 'Martina', initial: 'M', treatment: 'Bowen', text: 'Oduševljena uslugom, pristupom, ljubaznošću! Od 12.mj sam tu barem jednom mjesečno, otkad sam obavila set od 4 bowen terapije nemam migrene, koje su bile trodnevne i ništa mi nije pomagalo od lijekova. Nakon Bowen terapija kao da sam progledala. Svaka preporuka!❤️' },
+  { name: 'Saša', initial: 'S', treatment: 'Terapijske vježbe + tecar', text: 'Ne želite li ljubazan i profesionalan pristup iskusnog fizioterapeuta uz izvrsnu i pozitivnu komunikaciju u ugodnom ambijentu i uz to izvrsne rezultate nakon termina, onda svakako zaobiđite InStater i majstoricu Danijelu. Izvrsno iskustvo i vrlo dobri rezultati nakon fizioterapije i tretmana TECAR laserom.' },
+  { name: 'Ingrid', initial: 'I', treatment: 'Deep lifting + radiofrekvencija lica', text: 'Ugodno iskustvo s odličnim rezultatima deep lifting masaže+rf lica. Preporučam! 😀' },
+  { name: 'Maja', initial: 'M', treatment: 'Medicinska masaža', text: 'Do ovog mjesta sam došla slučajno, preko oglasa na instagramu. Bila sam u potrazi za dobrim fizioterapeutom koji pruža usluge masaže. Malo je reći da sam ostala oduševljena. Sama masaža je bila odlična i mogu reći da se stvarno vidi da cura ima dosta iskustva u tome. Toplo preporučam ovo mjesto 😊.' },
+  { name: 'Tomislav', initial: 'T', treatment: 'Bowen', text: 'Do In Statera centra sam došao preko preporuke kolegice, koja mi je rekla da su joj pomogli s alergijama. Na prvu nisam vjerovao da takva terapija može pomoći mom kihanju, ali već nakon jednog seta terapija alergijske reakcije su gotovo pa nestale. Svaka čast!' },
+  { name: 'Valerija', initial: 'V', treatment: 'Medicinska masaža', text: 'Danijela je jako profesionalna i ljubazna, uživala sam u ugodnom ambijentu i masaži cijelog tijela koja je bila baš opuštajuća. Svaka preporuka i vidimo se opet! 🤗❤️' },
+  { name: 'Damir', initial: 'D', treatment: 'Tecar', text: 'Sve za pohvalu. Od zaintereiranosti za vase boljke, davanja savjeta, komunikacije. 5+' },
+  { name: 'Štefica', initial: 'Š', treatment: 'Deep lifting', text: 'Tretman lica, točnije deep lifting, je fantastičan. Koriste se pomno odabrani visokokvalitetni proizvodi te se dobije odlična njega nakon koje lice izgleda osvježeno, hidratizirano i blistavo. Cijelo iskustvo je bilo vrlo ugodno, opuštajuće i zasigurno ću nastaviti sa kontinuiranim dolascima. Topla preporuka svima koji žele opuštajući užitak i pojačati njegu lica.' },
+  { name: 'Mladenka', initial: 'M', treatment: 'Tecar', text: 'Pa...odakle početi...nema nista ljepse nego kada vas na vratima dočeka mlada osoba s osmijehom na licu a o ljubaznosti i profesionalizmu da ne govorim. Išla sam tecar terapiju i poboljsanja su vidljiva...svakom toplo preporučujem terapiju u In strateri i vjerujte nećete požaliti!! 👍👏' },
+  { name: 'Marina', initial: 'M', treatment: 'Medicinska masaža', text: 'Sve pohvale za kolegicu fizioterapeut, od strucnosti, profesionalnosti, pristupa i jako ugodnog amijenta! Sve preporuke!' },
+  { name: 'Ugur', initial: 'U', treatment: 'Medicinska masaža', text: 'Najbolja masaza koju sam ikad probao, vrlo stručan i profesionalan pristup i ugodan prostor.' }
 ]
 </script>
 
@@ -113,14 +129,14 @@ const reviews = [
         </div>
       </section>
 
-      <section class="py-12 bg-white dark:bg-gray-900">
+      <section class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div class="flex flex-col items-center">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-8">Ponosni smo na kvalitetu naše usluge</h2>
-            <div class="backdrop-blur-lg bg-emerald-50/50 dark:bg-gray-800/40 rounded-2xl p-4 border border-emerald-100 dark:border-gray-700 shadow-lg inline-block">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8">Ponosni smo na kvalitetu naše usluge</h2>
+            <div class="backdrop-blur-lg bg-emerald-50/50 rounded-2xl p-4 border border-emerald-100 shadow-lg inline-block">
               <NuxtImg src="/images/topsalon2026.png" alt="Top Salon 2026 Award" class="h-40 md:h-56 w-auto object-contain hover:scale-105 transition-transform duration-300" />
             </div>
-            <p class="mt-6 text-gray-600 dark:text-gray-400 font-medium">Izbor zadovoljnih klijenata na SrediMe portalu</p>
+            <p class="mt-6 text-gray-600 font-medium">Izbor zadovoljnih klijenata na SrediMe portalu</p>
           </div>
         </div>
       </section>

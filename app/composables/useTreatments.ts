@@ -77,7 +77,14 @@ export const useTreatments = () => {
                 },
                 {
                     question: 'Kada se primjenjuje?',
-                    answer: 'Primjenjuje se kod grčeva (kolika), poteškoća s dojenjem, refluksa, problema sa spavanjem te napetosti u tijelu.'
+                    answer: 'Primjenjuje se kod:',
+                    list: [
+                        'grčeva (kolika)',
+                        'poteškoća s dojenjem',
+                        'refluksa',
+                        'problema sa spavanjem',
+                        'napetosti u tijelu'
+                    ]
                 },
                 {
                     question: 'Kako se primjenjuje i koliko traje?',
@@ -104,11 +111,17 @@ export const useTreatments = () => {
                 },
                 {
                     question: 'Kada se preporučuje medicinska masaža?',
-                    answer: 'Medicinska masaža se primjenjuje za bolove u leđima i vratu, glavobolje uzrokovane tenzijom, rehabilitaciju nakon operacija ili ozljeda, probleme s cirkulacijom, mišićne grčeve i napetosti te kao tretman za saniranje sportskih ozljeda.'
+                    answer: 'Medicinska masaža se primjenjuje za:',
+                    list: [
+                        'bolove u leđima i vratu', 'glavobolje uzrokovane tenzijom', 'rehabilitaciju nakon operacija ili ozljeda', 'probleme s cirkulacijom', 'mišićne grčeve i napetosti', 'tretmane sportskih ozljeda'
+                    ]
                 },
                 {
                     question: 'Postoje li stanja kod kojih se ne izvodi?',
-                    answer: 'Da, postoje kontraindikacije. Masaža se ne izvodi kod sumnje na duboku vensku trombozu, povišene tjelesne temperature, respiratornih zaraznih bolesti, opeklina, te infekcija kože i mekih tkiva (poput bakterijskih, virusnih ili gljivičnih infekcija - npr. herpes ili virusne bradavice) na dijelu tijela koji se tretira.'
+                    answer: 'Da, postoje kontraindikacije. Masaža se ne izvodi kod sumnje na:',
+                    list: [
+                        'duboku vensku trombozu', 'povišenu tjelesnu temperaturu', 'respiratorne zarazne bolesti', 'opeklina', 'infekcija kože i mekih tkiva (poput bakterijskih, virusnih ili gljivičnih infekcija - npr. herpes ili virusne bradavice) na dijelu tijela koji se tretira'
+                    ]
                 }
             ]
         },

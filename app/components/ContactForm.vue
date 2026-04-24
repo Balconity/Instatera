@@ -17,14 +17,14 @@ const errorMessage = ref('')
 
 const validate = (state: typeof form): FormError[] => {
   const errors: FormError[] = []
-  if (!state.name) errors.push({ name: 'name', message: 'Name is required' })       // ← 'name' not 'path'
+  if (!state.name) errors.push({ name: 'name', message: 'Ime i prezime je obavezno' })
   if (!state.email) {
-    errors.push({ name: 'email', message: 'Email is required' })
+    errors.push({ name: 'email', message: 'E-mail je obavezan' })
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email)) {
-    errors.push({ name: 'email', message: 'Invalid email address' })
+    errors.push({ name: 'email', message: 'Neispravna e-mail addresa' })
   }
-  if (!state.subject) errors.push({ name: 'subject', message: 'Subject is required' })
-  if (!state.message) errors.push({ name: 'message', message: 'Message is required' })
+  if (!state.subject) errors.push({ name: 'subject', message: 'Naslov poruke je obavezan' })
+  if (!state.message) errors.push({ name: 'message', message: 'Poruka je obavezna' })
   return errors
 }
 
@@ -38,10 +38,10 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
       method: 'POST',
       body: event.data
     })
-    successMessage.value = 'Thank you! Your message has been sent successfully.'
+    successMessage.value = 'Hvala! Vaša poruka je uspješno zaprimljena.'
     Object.assign(form, { name: '', email: '', subject: '', message: '' })
   } catch (error: any) {
-    errorMessage.value = error.data?.statusMessage || 'Something went wrong. Please try again later.'
+    errorMessage.value = error.data?.statusMessage || 'Nešto je pošlo po zlu. Pokušajte ponovno kasnije.'
   } finally {
     isSubmitting.value = false
   }
@@ -59,15 +59,15 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
       <UInput v-model="form.email" type="email" placeholder="E-mail" icon="i-heroicons-envelope" class="w-full" />
     </UFormField>
 
-    <UFormField label="Subject" name="subject" class="w-full">
-      <UInput v-model="form.subject" placeholder="How can we help?" icon="i-heroicons-chat-bubble-bottom-center-text" class="w-full" />
+    <UFormField label="Naslov pruke" name="subject" class="w-full">
+      <UInput v-model="form.subject" placeholder="Upišite naslov poruke" icon="i-heroicons-chat-bubble-bottom-center-text" class="w-full" />
     </UFormField>
 
-    <UFormField label="Message" name="message" class="w-full">
-      <UTextarea v-model="form.message" :rows="5" placeholder="Upiši poruku ..." class="w-full" />
+    <UFormField label="Poruka" name="message" class="w-full">
+      <UTextarea v-model="form.message" :rows="5" placeholder="Upišite poruku" class="w-full" />
     </UFormField>
 
-    <UAlert v-if="successMessage" title="Success" :description="successMessage" color="success" variant="subtle" icon="i-heroicons-check-circle" />
+    <UAlert v-if="successMessage" title="Bravo!" :description="successMessage" color="success" variant="subtle" icon="i-heroicons-check-circle" />
     <UAlert v-if="errorMessage" title="Error" :description="errorMessage" color="error" variant="subtle" icon="i-heroicons-exclamation-circle" />
 
     <UButton type="submit" color="primary" block size="lg" :loading="isSubmitting">

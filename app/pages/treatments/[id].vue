@@ -95,12 +95,20 @@ const treatment = computed(() => {
             <div class="flex flex-col gap-6 backdrop-blur-lg bg-white/40 dark:bg-gray-900/40 rounded-2xl p-8 border border-white/30 dark:border-gray-700 shadow-xl items-start">
 
               <div v-for="(block, index) in treatment.content" :key="index" class="w-full">
-                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">
                   {{ block.question }}
                 </h3>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+
+                <p class="text-gray-700 leading-relaxed text-lg" :class="{ 'mb-3': block.list }">
                   {{ block.answer }}
                 </p>
+
+                <ul v-if="block.list" class="space-y-2">
+                  <li v-for="(item, i) in block.list" :key="i" class="flex items-start gap-2 text-gray-700 text-lg leading-relaxed">
+                    <UIcon name="i-heroicons-check-circle" class="text-emerald-600 w-5 h-5 shrink-0 mt-1" />
+                    <span>{{ item }}</span>
+                  </li>
+                </ul>
               </div>
 
             </div>

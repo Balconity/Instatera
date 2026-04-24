@@ -49,13 +49,13 @@ const workingHours = [
   <div class="pt-16">
 
     <section class="hero-section-wrapper">
-      <div class="hero-bg-overlay bg-emerald-50 dark:bg-emerald-950/20" :style="{ backgroundImage: `url('${backgroundUrl}')` }"></div> <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="hero-bg-overlay bg-emerald-50" :style="{ backgroundImage: `url('${backgroundUrl}')` }"></div> <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="text-center">
-        <div class="backdrop-blur-lg bg-white/40 dark:bg-gray-900/40 rounded-3xl p-12 border border-white/30 dark:border-gray-700 shadow-xl inline-block">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
+        <div class="backdrop-blur-lg bg-white/40 rounded-3xl p-12 border border-white/30 shadow-xl inline-block">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             Kontakt
           </h1>
-          <p class="text-xl text-gray-700 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Obratite nam se s povjerenjem. Tu smo za sva vaša pitanja.
           </p>
         </div>
@@ -63,7 +63,7 @@ const workingHours = [
     </div>
     </section>
 
-    <section class="py-20 bg-white dark:bg-gray-950">
+    <section class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -71,19 +71,19 @@ const workingHours = [
           <div class="space-y-8">
 
             <div class="glass-card">
-              <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Kontakt podaci</h2>
+              <h2 class="text-2xl font-bold text-gray-800 mb-6">Kontakt podaci</h2>
               <div class="space-y-4">
                 <div v-for="item in contactDetails" :key="item.text" class="flex items-center space-x-4">
-                  <div class="bg-emerald-100 dark:bg-emerald-900/50 rounded-full p-3 flex-shrink-0">
-                    <UIcon :name="item.icon" class="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                  <div class="flex p-3 flex-shrink-0">
+                    <UIcon :name="item.icon" class="w-6 h-6 text-emerald-600" />
                   </div>
 
                   <component
                       :is="item.link ? 'a' : 'span'"
                       :href="item.link"
                       :target="item.link?.includes('http') ? '_blank' : undefined"
-                      class="text-lg text-gray-700 dark:text-gray-300 font-medium"
-                      :class="{ 'hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors': item.link }"
+                      class="text-lg text-gray-700 font-medium"
+                      :class="{ 'hover:text-emerald-600 transition-colors': item.link }"
                   >
                     {{ item.text }}
                   </component>

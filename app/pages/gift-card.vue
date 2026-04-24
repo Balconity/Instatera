@@ -71,7 +71,7 @@ const infoList = [
               :key="benefit"
               class="backdrop-blur-lg bg-emerald-50/50 dark:bg-gray-800/40 rounded-2xl p-6 border border-emerald-100 dark:border-gray-700 shadow-sm flex items-center space-x-4"
           >
-            <div class="bg-emerald-100 dark:bg-emerald-900/50 rounded-full p-2 flex-shrink-0">
+            <div class="flex bg-emerald-100 dark:bg-emerald-900/50 rounded-full p-2 flex-shrink-0">
               <UIcon name="i-heroicons-check" class="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
             </div>
             <span class="text-gray-700 dark:text-gray-200 font-medium">{{ benefit }}</span>
