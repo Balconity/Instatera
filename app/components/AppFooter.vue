@@ -19,7 +19,7 @@ const contactInfo = [
     link: 'https://maps.google.com/?q=III+Ravnice+14,+10000,+Zagreb'
   },
   {
-    icon: 'i-heroicons-truck',
+    icon: 'i-heroicons-ticket',
     text: 'Parking u ulici',
     link: null
   }
@@ -38,8 +38,8 @@ const workingHours = [
 
 // Pravni linkovi (Privacy Policy, Terms, Cookies)
 const legalLinks = [
-  { name: 'Politika privatnosti', path: '/politika-privatnosti' },
-  { name: 'Uvjeti korištenja', path: '/uvjeti-koristenja' },
+  { name: 'Politika privatnosti', path: '/privacy-policy' },
+  { name: 'Uvjeti korištenja', path: '/terms-of-service' },
   { name: 'Postavke kolačića', path: '/kolacici' }
 ]
 </script>
@@ -102,14 +102,14 @@ const legalLinks = [
       <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
 
         <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
-          <NuxtLinkLocale
+          <NuxtLink
               v-for="link in legalLinks"
               :key="link.path"
               :to="link.path"
               class="text-gray-500 hover:text-emerald-600 transition-colors"
           >
             {{ link.name }}
-          </NuxtLinkLocale>
+          </NuxtLink>
         </div>
 
         <p class="text-gray-500 text-sm text-center md:text-right">

@@ -9,7 +9,7 @@ const footerBackgroundUrl = computed(() => {
     format: 'webp'
   })
 });
-// --- Postojeći podaci ---
+
 const features = [
   {
     title: 'Individualni pristup',
@@ -69,7 +69,7 @@ const reviews = [
       <section class="flex flex-col-reverse md:flex-row max-w-7xl mx-auto overflow-hidden">
         <div class="flex items-center justify-center md:basis-1/2 p-6">
           <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <div class="backdrop-blur-lg bg-white/20 rounded-3xl p-8 border border-white/30 shadow-2xl">
+            <div>
               <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
                 Vaše tijelo zaslužuje<span class="text-emerald-600 block">ravnotežu.</span>
               </h1>
