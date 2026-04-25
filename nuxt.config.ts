@@ -12,6 +12,10 @@ export default defineNuxtConfig({
       ]
     }
   },
+  colorMode: {
+    preference: 'light',
+    fallback: 'light'
+  },
   nitro: {
     preset: 'aws-amplify'
   },
