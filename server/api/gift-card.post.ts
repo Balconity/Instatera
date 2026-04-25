@@ -12,11 +12,26 @@ export default defineEventHandler(async (event) => {
     })
 
     const body = await readBody(event)
-    const { fromName, email, phone, toName, amount } = body
+    // Added giftType and treatment to the destructured body
+    const { fromName, email, phone, toName, giftType, amount, treatment } = body
 
-    if (!fromName || !email || !phone || !toName || !amount) {
+    // 1. Validate base fields
+    if (!fromName || !email || !phone || !toName || !giftType) {
         throw createError({
-            statusCode: 400, message: 'Sva polja su obavezna.'
+            statusCode: 400, message: 'Sva polja za kontakt i ime primatelja su obavezna.'
+        })
+    }
+
+    // 2. Validate conditional fields based on giftType
+    if (giftType === 'amount' && !amount) {
+        throw createError({
+            statusCode: 400, message: 'Odabrali ste iznos, ali iznos nije unesen.'
+        })
+    }
+
+    if (giftType === 'treatment' && !treatment) {
+        throw createError({
+            statusCode: 400, message: 'Odabrali ste tretman, ali tretman nije odabran.'
         })
     }
 
@@ -26,6 +41,15 @@ export default defineEventHandler(async (event) => {
             statusCode: 400, message: 'Neispravna e-mail adresa.'
         })
     }
+
+    // Generate dynamic HTML for the gift details based on what was selected
+    const giftDetailsHtml = giftType === 'amount'
+        ? `<p style="margin: 0.5rem 0; font-size: 1.25rem;">
+          <strong>Iznos:</strong> <span style="color: #059669; font-weight: 800; font-size: 1.5rem;">${amount} €</span>
+         </p>`
+        : `<p style="margin: 0.5rem 0; font-size: 1.25rem;">
+          <strong>Odabrani tretman:</strong> <span style="color: #059669; font-weight: 800; font-size: 1.25rem;">${treatment}</span>
+         </p>`;
 
     try {
         await transporter.sendMail({
@@ -65,9 +89,7 @@ export default defineEventHandler(async (event) => {
             <p style="margin: 0.5rem 0; font-size: 1.1rem;">
               <strong>Za koga:</strong> ${toName}
             </p>
-            <p style="margin: 0.5rem 0; font-size: 1.25rem;">
-              <strong>Iznos:</strong> <span style="color: #059669; font-weight: 800; font-size: 1.5rem;">${amount} €</span>
-            </p>
+            ${giftDetailsHtml}
           </div>
 
           <p style="margin-top: 2rem; font-size: 0.85rem; color: #6b7280; text-align: center;">
