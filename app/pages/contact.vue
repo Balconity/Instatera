@@ -125,7 +125,7 @@ const workingHours = [
       </div>
     </section>
 
-    <section class="h-96 w-full bg-gray-200 dark:bg-gray-800 relative">
+    <section class="h-96 w-full bg-gray-200 relative">
       <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.042221650393!2d16.0150937!3d45.816654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d7ad6ab6dfcd%3A0xb245ab7c413b1f56!2sIII%20Ravnice%2014%2C%2010000%2C%20Zagreb!5e0!3m2!1sen!2shr!4v1700000000000!5m2!1sen!2shr"
           width="100%"
@@ -134,7 +134,7 @@ const workingHours = [
           allowfullscreen="false"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          class="absolute inset-0 grayscale contrast-75 opacity-90 dark:opacity-70 dark:invert"
+          class="absolute inset-0"
       ></iframe>
     </section>
 

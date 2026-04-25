@@ -6,7 +6,7 @@ export const useTreatments = () => {
             description: 'Nježna, manualna terapija koja tijelo dovodi u ravnotežu, ublažava bolove i poboljšava cjelokupno funkcioniranje. Preporučuje se za stres, išijas i napetost.',
             price: 'od 45€',
             duration: '30 - 60 min',
-            image: '/images/treatments/emmet.jpg',
+            image: '/images/treatments/emmet.png',
             targetAudience: 'Sve dobne skupine',
             content: [
                 {
