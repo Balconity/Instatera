@@ -25,52 +25,41 @@ useSeoMeta({
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 
-        <UCard
+        <NuxtLink
             v-for="treatment in treatments"
             :key="treatment.id"
-            class="flex flex-col h-full overflow-hidden hover:shadow-xl transition-shadow duration-300 dark:border-gray-800"
-            :ui="{ body: 'p-0 sm:p-0' }"
+            :to="`/treatments/${treatment.id}`"
+            class="block group outline-none"
         >
-          <div class="relative h-56 bg-gray-200 dark:bg-gray-800">
-            <img
-                v-if="treatment.image"
-                :src="treatment.image"
-                :alt="treatment.title"
-                class="w-full h-full object-cover"
-            />
-            <div v-else class="w-full h-full flex items-center justify-center text-gray-400">
-              <UIcon name="i-heroicons-sparkles" class="w-12 h-12" />
-            </div>
-          </div>
-
-          <div class="p-6 flex flex-col flex-grow">
-            <div class="flex justify-between items-start mb-3">
-              <h2 class="text-xl font-bold text-gray-900 dark:text-white">
-                {{ treatment.title }}
-              </h2>
-              <UBadge v-if="treatment.price" color="primary" variant="subtle">
-                {{ treatment.price }}
-              </UBadge>
+          <UCard
+              class="flex flex-col h-full overflow-hidden hover:shadow-xl transition-shadow duration-300 dark:border-gray-800 cursor-pointer"
+              :ui="{ body: 'p-0 sm:p-0' }"
+          >
+            <div class="relative h-56 bg-gray-200 dark:bg-gray-800">
+              <img
+                  v-if="treatment.image"
+                  :src="treatment.image"
+                  :alt="treatment.title"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div v-else class="w-full h-full flex items-center justify-center text-gray-400">
+                <UIcon name="i-heroicons-sparkles" class="w-12 h-12" />
+              </div>
             </div>
 
-            <p v-if="treatment.description" class="text-gray-600 dark:text-gray-400 mb-6 flex-grow line-clamp-3">
-              {{ treatment.description }}
-            </p>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-start mb-3">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors duration-300">
+                  {{ treatment.title }}
+                </h2>
+              </div>
 
-            <div class="mt-auto pt-4">
-              <UButton
-                  block
-                  color="primary"
-                  variant="solid"
-                  :to="`/treatments/${treatment.id}`"
-                  :as="NuxtLink"
-              >
-                Saznajte više
-              </UButton>
+              <p v-if="treatment.description" class="text-gray-600 dark:text-gray-400 flex-grow line-clamp-3">
+                {{ treatment.description }}
+              </p>
             </div>
-          </div>
-
-        </UCard>
+          </UCard>
+        </NuxtLink>
 
       </div>
     </UContainer>

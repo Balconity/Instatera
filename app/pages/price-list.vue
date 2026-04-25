@@ -184,7 +184,7 @@ const additionalInfo = [
       </div>
     </section>
 
-    <section class="py-20 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/prostor.webp');">
+    <section class="py-20 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/prostor.jpg');">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 rounded-2xl p-8 border border-white/30 dark:border-gray-700 shadow-xl">
           <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Spremni?</h2>

@@ -129,7 +129,7 @@ export const useTreatments = () => {
             id: 'tecar',
             title: 'Tecar',
             description: 'Napredna tehnologija koja ubrzava oporavak tkiva i do 70%. Izvrsna za sportske ozljede, bolove u zglobovima i upale.',
-            price: '25€ (1 segment)',
+            price: '25€',
             duration: '30 min',
             image: '/images/treatments/tecar.jpg',
             targetAudience: 'Odrasli i sportaši',
@@ -144,15 +144,49 @@ export const useTreatments = () => {
                 },
                 {
                     question: 'Za što se koristi Tecar terapija?',
-                    answer: 'Koristi se za bolove u leđima i vratu, išijas, herniju diska, bolno rame, sportske ozljede (istegnuća, uganuća), tendinitise, bursitise, artroze i artritise, oporavak nakon operacija ili prijeloma, sindrom karpalnog kanala, plantarni fascitis, teniski lakat, napetost mišića, trigger točke u mišićima i slično.'
+                    answer: 'Koristi se za:',
+                    list: [
+                        'bolove u leđima i vratu',
+                        'išijas, herniju diska',
+                        'bolno rame',
+                        'sportske ozljede (istegnuća, uganuća)',
+                        'tendinitise, bursitise',
+                        'artroze i artritise',
+                        'oporavak nakon operacija ili prijeloma',
+                        'sindrom karpalnog kanala',
+                        'plantarni fascitis',
+                        'teniski lakat',
+                        'napetost mišića',
+                        'trigger točke u mišićima',
+                        'ostalo'
+                    ]
+                },
+                {
+                    question: '',
+                    answer: 'Iako se smatra sigurnom i efikasnom metodom fizikalne terapije, postoje određene kontraindikacije koje treba uyeti u obyir kako bi se iybjegle komplikacije.'
                 },
                 {
                     question: 'Postoje li apsolutne kontraindikacije za primjenu?',
-                    answer: 'Da, potpuna zabrana primjene vrijedi za trudnoću (posebno se izbjegava trbuh i donji dio leđa), elektronske implantate poput pejsmejkera (zbog mogućnosti interferencije), maligne bolesti (potencijalno ubrzavanje rasta stanica), akutne infekcije ili upale te tromboflebitis ili duboku vensku trombozu (rizik od embolije).'
+                    answer: 'Da, potpuna zabrana primjene vrijedi za:',
+                    list: [
+                        'trudnoću (posebno se izbjegava tretiranje trbuha i donjeg dijela leđa)',
+                        'elektronske implantate poput pejsmejkera (zbog mogućnosti interferencije)',
+                        'maligne bolesti (potencijalno ubrzavanje rasta stanica)',
+                        'akutne infekcije ili upale',
+                        'tromboflebitis ili duboku vensku trombozu (rizik od embolije)'
+                    ]
                 },
                 {
                     question: 'Kod kojih je stanja potreban dodatan oprez (relativne kontraindikacije)?',
-                    answer: 'Oprez je potreban kod otvorenih rana, opekotina, kožnih oboljenja (poput izraženog dermatitisa i psorijaze), neosjetljivosti na temperaturu (npr. dijabetička neuropatija), prisutnosti metalnih implantata u tretiranom području (mogu izazvati pregrijavanje tkiva), menstruacije te kod tretiranja djece i starijih osoba zbog preosjetljivosti na toplinu.'
+                    answer: 'Oprez je potreban kod:',
+                    list: [
+                        'otvorenih rana, opekotina',
+                        'kožnih oboljenja (poput izraženog dermatitisa i psorijaze)',
+                        'neosjetljivosti na temperaturu (npr. dijabetička neuropatija)',
+                        'prisutnosti metalnih implantata u tretiranom području (mogu izazvati pregrijavanje tkiva)',
+                        'menstruacije',
+                        'djece i starijih osoba zbog preosjetljivosti na toplinu'
+                    ]
                 }
             ]
         },
@@ -171,11 +205,25 @@ export const useTreatments = () => {
                 },
                 {
                     question: 'Koja je njihova glavna svrha?',
-                    answer: 'Glavna svrha je vraćanje pokretljivosti, poboljšanje snage i izdržljivosti mišića, smanjenje boli i ukočenosti, poboljšanje držanja i ravnoteže te dugoročna prevencija daljnjih ozljeda.'
+                    answer: 'Glavna svrha je:',
+                    list: [
+                        'vraćanje pokretljivosti',
+                        'poboljšanje snage i izdržljivosti mišića',
+                        'smanjenje boli i ukočenosti',
+                        'poboljšanje držanja i ravnoteže',
+                        'dugoročna prevencija daljnjih ozljeda'
+                    ]
                 },
                 {
                     question: 'Koje vrste terapijskih vježbi postoje?',
-                    answer: 'Koriste se različite vrste vježbi: vježbe istezanja za povećanje fleksibilnosti, vježbe snage za jačanje oslabljenih mišića, stabilizacijske vježbe za bolju kontrolu pokreta, koordinacijske i proprioceptivne vježbe za ravnotežu i sprečavanje padova, te vježbe disanja i relaksacije za opuštanje i pravilnu funkciju tijela.'
+                    answer: 'Koriste se različite vrste vježbi:',
+                    list: [
+                        'vježbe istezanja za povećanje fleksibilnosti',
+                        'vježbe snage za jačanje oslabljenih mišića',
+                        'stabilizacijske vježbe za bolju kontrolu pokreta',
+                        'koordinacijske i proprioceptivne vježbe za ravnotežu i sprečavanje padova',
+                        'vježbe disanja i relaksacije za opuštanje i pravilnu funkciju tijela'
+                    ]
                 },
                 {
                     question: 'Tko provodi terapijske vježbe?',
@@ -194,7 +242,13 @@ export const useTreatments = () => {
             content: [
                 {
                     question: 'Što je tretman ožiljaka?',
-                    answer: 'Tretman ožiljka izvodi se po MSTR (McLoughlin Scar Tissue Release) metodi. To je manualna, nježna terapijska tehnika koja omogućuje poboljšanje elastičnosti i pokretljivosti kože i tkiva. Pomaže u smanjenju boli, zategnutosti i peckanja, potiče bolju cirkulaciju i limfnu drenažu te poboljšava izgled ožiljka koji često postaje manje crven, manji i mekši.'
+                    answer: 'Tretman ožiljka izvodi se po MSTR (McLoughlin Scar Tissue Release) metodi. To je manualna, nježna terapijska tehnika koja:',
+                    list: [
+                        'omogućuje poboljšanje elastičnosti i pokretljivosti kože i tkiva',
+                        'Pomaže u smanjenju boli, zategnutosti i peckanja',
+                        'potiče bolju cirkulaciju i limfnu drenažu',
+                        'poboljšava izgled ožiljka koji često postaje manje crven, manji i mekši'
+                    ]
                 },
                 {
                     question: 'Kako izgleda sam tretman?',
@@ -206,7 +260,12 @@ export const useTreatments = () => {
                 },
                 {
                     question: 'Koje su kontraindikacije za tretman ožiljaka?',
-                    answer: 'Tretman se ne smije izvoditi na svježim i nezaraslim ranama, u slučaju infekcije ili aktivne upale u području ožiljka, te u slučaju raka kože ili drugih kožnih oboljenja na mjestu samog tretmana.'
+                    answer: 'Tretman se ne smije izvoditi:',
+                    list: [
+                        'na svježim i nezaraslim ranama',
+                        'u slučaju infekcije ili aktivne upale u području ožiljka',
+                        'u slučaju raka kože ili drugih kožnih oboljenja na mjestu samog tretmana'
+                    ]
                 }
             ]
         },
