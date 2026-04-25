@@ -1,9 +1,9 @@
 <script setup lang="ts">
-useHead({
-  title: 'Uvjeti korištenja | In Statera',
-  meta: [
-    { name: 'description', content: 'Pročitajte uvjete korištenja, pravila o terminima i poklon bonovima za In Statera usluge.' }
-  ]
+
+useSeoMeta({
+  title: 'Uvjeti korištenja',
+  description: 'Pravila i uvjeti korištenja web stranice i usluga In Statera centra.',
+  robots: 'noindex, nofollow'
 })
 </script>
 

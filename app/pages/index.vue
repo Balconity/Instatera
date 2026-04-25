@@ -1,5 +1,22 @@
 <script setup lang="ts">
 
+
+useSeoMeta({
+  title: 'Fizioterapija i masaža Zagreb',
+  description: 'In Statera je centar fizioterapije u Zagrebu koji nudi holistički pristup zdravlju. Ublažite bol i vratite ravnotežu uz Bowen tehniku, Tecar terapiju i stručne masaže.',
+
+  ogTitle: 'In Statera | Centar fizioterapije i holističkih tretmana',
+  ogDescription: 'Riješite se boli i stresa uz stručne fizioterapijske tretmane, Bowen tehniku i masaže. Vaše tijelo zaslužuje ravnotežu.',
+  ogImage: '/images/hero.jpg',
+  ogType: 'website',
+  ogUrl: 'https://instatera.hr/',
+
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'In Statera | Fizioterapija i masaža Zagreb',
+  twitterDescription: 'Holistički pristup zdravlju. Ublažite bol i vratite ravnotežu uz stručne tretmane u In Stateri.',
+  twitterImage: '/images/hero.jpg'
+})
+
 const img = useImage()
 
 const footerBackgroundUrl = computed(() => {

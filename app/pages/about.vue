@@ -2,11 +2,19 @@
 const img = useImage();
 
 useSeoMeta({
-  title: 'O meni | In Statera',
-  description: 'Saznajte više o Danijeli, prvostupnici fizioterapije i certificiranoj Bowen terapeutkinji. Vaš partner u zdravlju i oporavku u Zagrebu.',
-  ogTitle: 'O meni | In Statera',
-  ogDescription: 'Saznajte više o Danijeli, prvostupnici fizioterapije i certificiranoj Bowen terapeutkinji.',
-  ogImage: '/images/portret.webp',
+  title: 'O meni',
+  description: 'Upoznajte Danijelu, prvostupnicu fizioterapije i certificiranu Bowen terapeutkinju. Vaš stručni partner u zdravlju, oporavku i pronalasku životne ravnoteže u Zagrebu.',
+
+  ogTitle: 'O meni - Upoznajte svog terapeuta | In Statera',
+  ogDescription: 'Upoznajte Danijelu, vlasnicu In Statera centra. Posvećena vašem zdravlju i životu bez boli kroz holistički pristup i stručne tehnike.',
+  ogImage: '/images/portrait.jpg',
+  ogType: 'profile',
+  ogUrl: 'https://instatera.hr/about',
+
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'O meni | In Statera',
+  twitterDescription: 'Upoznajte Danijelu, prvostupnicu fizioterapije i vlasnicu In Statera centra u Zagrebu.',
+  twitterImage: '/images/portrait.jpg'
 })
 
 const backgroundUrl = computed(() => {

@@ -15,6 +15,30 @@ const backgroundUrl = computed(() => {
 const treatment = computed(() => {
   return allTreatments.find(item => item.id === route.params.id) || null
 })
+
+// DINAMIČKI SEO
+useSeoMeta({
+  title: () => treatment.value ? treatment.value.title : 'Tretman nije pronađen',
+
+  description: () => treatment.value
+      ? `Saznajte sve o tretmanu: ${treatment.value.title}. Trajanje: ${treatment.value.duration}. Prilagođeno za: ${treatment.value.targetAudience.toLowerCase()}. Rezervirajte svoj termin u In Statera centru u Zagrebu.`
+      : 'Traženi tretman nije pronađen.',
+
+  ogTitle: () => treatment.value ? `${treatment.value.title} | In Statera` : 'Tretman nije pronađen | In Statera',
+  ogDescription: () => treatment.value
+      ? `Zanima vas ${treatment.value.title}? Pogledajte detalje, cijenu i trajanje te rezervirajte svoj termin u našem centru.`
+      : 'Traženi tretman nije pronađen.',
+  ogImage: () => treatment.value ? treatment.value.image : '/images/prostor.jpg',
+  ogType: 'article',
+  ogUrl: () => `https://instatera.hr/treatments/${route.params.id}`,
+
+  twitterCard: 'summary_large_image',
+  twitterTitle: () => treatment.value ? treatment.value.title : 'Tretman nije pronađen',
+  twitterDescription: () => treatment.value
+      ? `Zanima vas ${treatment.value.title}? Pogledajte detalje i rezervirajte termin.`
+      : 'Traženi tretman nije pronađen.',
+  twitterImage: () => treatment.value ? treatment.value.image : '/images/prostor.jpg',
+})
 </script>
 
 <template>
@@ -111,8 +135,6 @@ const treatment = computed(() => {
           </div>
         </div>
       </section>
-
-
 
       <section class="hero-section-wrapper">
         <div class="hero-bg-overlay bg-emerald-50" :style="{ backgroundImage: `url('${backgroundUrl}')` }"></div>

@@ -1,8 +1,23 @@
 <script setup lang="ts">
 
+useSeoMeta({
+  title: 'Cjenik',
+  description: 'Pregled cijena za fizioterapijske tretmane, medicinske masaže, Bowen i Emmett tehniku te Tecar terapiju u In Statera centru u Zagrebu.',
+
+  ogTitle: 'Cjenik usluga | In Statera',
+  ogDescription: 'Pregled cijena za fizioterapijske tretmane, medicinske masaže, Bowen i Emmett tehniku te Tecar terapiju u In Statera centru.',
+  ogImage: '/images/prostor.jpg',
+  ogType: 'website',
+  ogUrl: 'https://instatera.hr/price-list',
+
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Cjenik usluga | In Statera',
+  twitterDescription: 'Pregled cijena za fizioterapijske tretmane, medicinske masaže, Bowen i Emmett tehniku.',
+  twitterImage: '/images/prostor.jpg'
+})
+
 const img = useImage()
 
-// Generiranje optimiziranog URL-a za pozadinsku sliku
 const backgroundUrl = computed(() => {
   return img('/images/prostor.jpg', {
     width: 1920,
@@ -72,7 +87,6 @@ const pricingCategories = [
   }
 ]
 
-// Data for Additional Info
 const additionalInfo = [
   {
     title: 'Paketi',

@@ -2,12 +2,20 @@
 const img = useImage()
 
 useSeoMeta({
-  title: 'Poklon bon | In Statera',
-  description: 'Tražite savršen poklon? Poklonite zdravlje i opuštanje! Naručite In Statera poklon bon za masaže i fizioterapijske tretmane.',
-  ogTitle: 'Poklon Bon | In Statera',
-  ogDescription: 'Iznenadite dragu osobu ulaznicom u svijet zdravlja i dobrobiti.',
-  ogImage: '/images/poklon-bon.webp',
-});
+  title: 'Poklon bon',
+  description: 'Iznenadite svoje najdraže poklon bonom za masažu, fizioterapiju ili Bowen tretman. Idealan poklon za zdravlje i opuštanje u In Statera centru u Zagrebu.',
+
+  ogTitle: 'Poklonite zdravlje i opuštanje | In Statera poklon bon',
+  ogDescription: 'Tražite savršen poklon? Obradujte svoje voljene In Statera poklon bonom za stručne fizioterapijske tretmane i medicinske masaže.',
+  ogImage: '/gift-card.jpg',
+  ogType: 'website',
+  ogUrl: 'https://instatera.hr/gift-card',
+
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Poklon bon | In Statera',
+  twitterDescription: 'Iznenadite svoje najdraže poklon bonom za masažu i fizioterapiju. Idealan poklon za zdravlje.',
+  twitterImage: '/gift-card.webp'
+})
 
 const backgroundUrl = computed(() => {
   return img('/images/gift-card.jpg', {

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-useHead({
-  title: 'Politika privatnosti | In Statera',
-  meta: [
-    { name: 'description', content: 'Saznajte kako In Statera prikuplja, koristi i štiti vaše osobne podatke.' }
-  ]
+
+useSeoMeta({
+  title: 'Politika privatnosti',
+  description: 'Informacije o zaštiti osobnih podataka i privatnosti korisnika In Statera centra.',
+  robots: 'noindex, nofollow'
 })
 </script>
 

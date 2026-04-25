@@ -1,13 +1,25 @@
 <script setup lang="ts">
-const treatments = useTreatments()
 
 useSeoMeta({
-  title: 'Tretmani | In Statera',
-  description: 'Otkrijte spektar tretmana prilagođenih vašim potrebama: Bowen terapija, medicinska masaža, Tecar, terapijske vježbe i Deep lifting lica.',
-  ogTitle: 'Tretmani | In Statera',
-  ogDescription: 'Nježne terapije i stručne masaže za život bez boli i u ravnoteži.',
-  ogImage: '/images/tretmani.webp',
+  title: 'Tretmani', // Will output as "Usluge i tretmani | In Statera"
+  description: 'Otkrijte širok spektar fizioterapijskih tretmana u In Statera centru u Zagrebu. Nudimo Bowen i Emmett tehniku, medicinske masaže, Tecar terapiju i specijalizirane masaže lica.',
+
+  // Open Graph (For sharing on Facebook, WhatsApp, Viber, LinkedIn...)
+  ogTitle: 'Usluge i tretmani | In Statera',
+  ogDescription: 'Stručni fizioterapijski tretmani, Bowen terapija, Tecar i medicinske masaže za vaš brži oporavak i povratak u ravnotežu.',
+  ogImage: '/images/hero.jpg', // Feel free to change this to an image showing an actual treatment
+  ogType: 'website',
+  ogUrl: 'https://instatera.hr/treatments', // Update if your URL is /tretmani
+
+  // Twitter / X
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Usluge i tretmani | In Statera',
+  twitterDescription: 'Stručni fizioterapijski tretmani i masaže za vaš brži oporavak i život u ravnoteži.',
+  twitterImage: '/images/hero.jpg'
 })
+
+const treatments = useTreatments()
+
 </script>
 
 <template>

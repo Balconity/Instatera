@@ -1,8 +1,23 @@
 <script setup lang="ts">
 
+useSeoMeta({
+  title: 'Kontakt',
+  description: 'Naručite se na fizioterapijski tretman ili masažu. Pronađite našu adresu na Ravnicama (Zagreb), radno vrijeme i kontakt podatke In Statera centra.',
+
+  ogTitle: 'Kontaktirajte nas | In Statera',
+  ogDescription: 'Imate pitanja ili želite rezervirati termin? Ovdje pronađite naš broj telefona, e-mail, radno vrijeme i točnu lokaciju u Zagrebu.',
+  ogImage: '/images/contact.jpg',
+  ogType: 'website',
+  ogUrl: 'https://instatera.hr/contact',
+
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Kontakt | In Statera',
+  twitterDescription: 'Naručite se na tretman ili nas kontaktirajte za više informacija. Pronađite naše radno vrijeme i lokaciju.',
+  twitterImage: '/images/contact.jpg'
+})
+
 const img = useImage()
 
-// Generiranje optimiziranog URL-a za pozadinsku sliku
 const backgroundUrl = computed(() => {
   return img('/images/contact.jpg', {
     width: 1920,
