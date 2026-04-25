@@ -226,6 +226,7 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
       <USelectMenu
           v-model="form.amount"
           :items="amountOptions"
+          :searchInput="false"
           value-key="value"
           label-key="label"
           placeholder="Odaberite iznos..."
@@ -249,6 +250,7 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
       <USelectMenu
           v-model="form.treatment"
           :items="treatmentOptions"
+          :searchInput="false"
           value-key="value"
           label-key="label"
           placeholder="Odaberite tretman..."
