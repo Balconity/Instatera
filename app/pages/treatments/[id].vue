@@ -2,16 +2,6 @@
 const route = useRoute()
 const allTreatments = useTreatments()
 
-const img = useImage()
-
-const footerBackgroundUrl = computed(() => {
-  return img('/images/prostor.jpg', {
-    width: 1920,
-    quality: 80,
-    format: 'webp'
-  })
-});
-
 const treatment = computed(() => {
   return allTreatments.find(item => item.id === route.params.id) || null
 })
@@ -76,7 +66,7 @@ useSeoMeta({
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20">
 
-        <div class="lg:col-span-7 space-y-8">
+        <div class="lg:col-span-7 space-y-8 order-2 lg:order-1">
           <div
               v-for="(block, index) in treatment.content"
               :key="index"
@@ -99,7 +89,7 @@ useSeoMeta({
           </div>
         </div>
 
-        <div class="lg:col-span-5 lg:sticky lg:top-32 space-y-8">
+        <div class="lg:col-span-5 lg:sticky lg:top-32 space-y-8 order-1 lg:order-2">
 
           <div class="relative">
             <div class="absolute -inset-3 bg-emerald-100/60 rounded-[2.5rem] blur-xl -z-10 transform rotate-2"></div>
@@ -149,7 +139,7 @@ useSeoMeta({
       </div>
     </div>
 
-    <CtaSection />
+    <CtaSection v-if="treatment" />
 
   </div>
 </template>

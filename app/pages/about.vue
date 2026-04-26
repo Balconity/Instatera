@@ -17,14 +17,6 @@ useSeoMeta({
   twitterImage: '/images/portrait.jpg'
 })
 
-const backgroundUrl = computed(() => {
-  return img('/images/prostor.jpg', {
-    width: 1920,
-    quality: 80,
-    format: 'webp'
-  })
-});
-
 const stats = [
   { label: 'Godina osnivanja', value: '2023' },
   { label: 'Zadovoljnih klijenata', value: '500+' },
@@ -49,7 +41,7 @@ const stats = [
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20">
 
-        <div class="lg:col-span-7 space-y-10">
+        <div class="lg:col-span-7 space-y-10 order-2 lg:order-1">
 
           <div>
             <p class="text-2xl font-light text-gray-900 leading-relaxed mb-4">
@@ -132,7 +124,7 @@ const stats = [
 
         </div>
 
-        <div class="lg:col-span-5 lg:sticky lg:top-32">
+        <div class="lg:col-span-5 lg:sticky lg:top-32 order-1 lg:order-2">
 
           <div class="relative mb-8">
             <div class="absolute -inset-3 bg-emerald-100/60 rounded-[2.5rem] blur-xl -z-10 transform rotate-3"></div>
