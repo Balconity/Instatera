@@ -1,24 +1,23 @@
 <script setup lang="ts">
-
 useSeoMeta({
   title: 'Cjenik',
-  description: 'Pregled cijena za fizioterapijske tretmane, medicinske masaže, Bowen i Emmett tehniku te Tecar terapiju u In Statera centru u Zagrebu.',
+  description: 'Pregled cijena za fizioterapijske tretmane, medicinske masaže, Bowen i EMMETT tehniku te Tecar terapiju u In Statera centru u Zagrebu.',
 
   ogTitle: 'Cjenik usluga | In Statera',
-  ogDescription: 'Pregled cijena za fizioterapijske tretmane, medicinske masaže, Bowen i Emmett tehniku te Tecar terapiju u In Statera centru.',
+  ogDescription: 'Pregled cijena za fizioterapijske tretmane, medicinske masaže, Bowen i EMMETT tehniku te Tecar terapiju u In Statera centru.',
   ogImage: '/images/prostor.jpg',
   ogType: 'website',
   ogUrl: 'https://instatera.hr/price-list',
 
   twitterCard: 'summary_large_image',
   twitterTitle: 'Cjenik usluga | In Statera',
-  twitterDescription: 'Pregled cijena za fizioterapijske tretmane, medicinske masaže, Bowen i Emmett tehniku.',
+  twitterDescription: 'Pregled cijena za fizioterapijske tretmane, medicinske masaže, Bowen i EMMETT tehniku.',
   twitterImage: '/images/prostor.jpg'
 })
 
 const img = useImage()
 
-const backgroundUrl = computed(() => {
+const footerBackgroundUrl = computed(() => {
   return img('/images/prostor.jpg', {
     width: 1920,
     quality: 80,
@@ -26,14 +25,13 @@ const backgroundUrl = computed(() => {
   })
 });
 
-// Data for the pricing categories
 const pricingCategories = [
   {
     title: 'Fizioterapijski tretmani',
     items: [
       { name: 'Pregled, procjena i konzultacije', duration: '', price: '35 €' },
       { name: 'Procjena i prvi tretman', duration: '', price: '55 €' },
-      { name: 'In Statera tretman (kombinacija tretmana)', duration: '60 min', price: '50 €' }
+      { name: 'In Statera tretman (kombinacija)', duration: '60 min', price: '50 €' }
     ]
   },
   {
@@ -48,10 +46,10 @@ const pricingCategories = [
     ]
   },
   {
-    title: 'Bowen / Emmett tehnika',
+    title: 'Bowen / EMMETT tehnika',
     items: [
-      { name: 'Bowen / Emmett tretman', duration: '30 - 60 min', price: '45 €' },
-      { name: 'Bowen / Emmett paket (4x)', duration: '30 - 60 min', price: '160 €' },
+      { name: 'Bowen / EMMETT tretman', duration: '30 - 60 min', price: '45 €' },
+      { name: 'Bowen / EMMETT paket (4x)', duration: '30 - 60 min', price: '160 €' },
       { name: 'Baby Bowen', duration: '5 - 15 min', price: '20 €' }
     ]
   },
@@ -66,7 +64,7 @@ const pricingCategories = [
   {
     title: 'Ožiljci',
     items: [
-      { name: 'Tretman ožiljka', duration: 'okvirno 20 min, ovisno o veličini ožiljka', price: '25 €' }
+      { name: 'Tretman ožiljka', duration: 'ovisno o veličini', price: '25 €' }
     ]
   },
   {
@@ -104,116 +102,103 @@ const additionalInfo = [
 </script>
 
 <template>
-  <div class="pt-16">
+  <div class="pt-20 min-h-screen bg-gray-50 flex flex-col">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow mb-24">
 
-    <section class="relative py-20 overflow-hidden hero-section">
-      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" :style="{ backgroundImage: `url('${backgroundUrl}')` }"></div>
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <div class="backdrop-blur-lg bg-white/40 rounded-3xl p-12 border border-white/30 shadow-2xl inline-block">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Cjenik usluga</h1>
-            <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">Pregled cijena za sve tretmane</p>
-          </div>
-        </div>
+      <div class="text-center max-w-3xl mx-auto mb-16 relative">
+        <div class="absolute -inset-4 bg-emerald-100/50 rounded-full blur-2xl -z-10"></div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+          Cjenik <span class="text-emerald-600">usluga</span>
+        </h1>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Pregledajte cijene svih naših tretmana. Za sva pitanja o kombiniranju terapija, slobodno nas kontaktirajte.
+        </p>
       </div>
-    </section>
 
-    <section class="py-20 bg-gray-50 dark:bg-gray-900">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-
-          <div
-              v-for="category in pricingCategories"
-              :key="category.title"
-              class="backdrop-blur-lg bg-white/50 dark:bg-gray-800/50 rounded-2xl p-8 border border-white/30 dark:border-gray-700 shadow-xl"
-          >
-            <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6 text-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div
+            v-for="category in pricingCategories"
+            :key="category.title"
+            class="bg-white rounded-3xl shadow-xl shadow-gray-200/40 border border-gray-100 p-6 sm:p-8 hover:shadow-2xl transition-shadow duration-300"
+        >
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
+            <h3 class="text-2xl font-bold text-gray-800">
               {{ category.title }}
             </h3>
-            <div class="space-y-4">
-
-              <div
-                  v-for="item in category.items"
-                  :key="item.name"
-                  class="flex justify-between items-center p-4 backdrop-blur-sm bg-white/40 dark:bg-gray-700/40 rounded-lg border border-white/40 dark:border-gray-600"
-              >
-                <div>
-                  <h4 class="font-medium text-gray-800 dark:text-white">{{ item.name }}</h4>
-                  <div v-if="item.duration" class="flex items-center text-sm text-gray-600 dark:text-gray-300 mt-1">
-                    <UIcon name="i-heroicons-clock" class="h-4 w-4 mr-1 text-emerald-600" />
-                    {{ item.duration }}
-                  </div>
-                </div>
-                <div class="text-lg font-bold text-emerald-600">{{ item.price }}</div>
-              </div>
-
-            </div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 bg-white dark:bg-gray-950">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-
-          <div>
-            <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Dodatne informacije</h2>
-            <div class="space-y-6">
-              <div v-for="info in additionalInfo" :key="info.title" class="flex items-start space-x-3">
-                <UIcon name="i-heroicons-check" class="h-6 w-6 text-emerald-600 flex-shrink-0 mt-1" />
-                <div>
-                  <h4 class="font-medium text-gray-800 dark:text-white">{{ info.title }}</h4>
-                  <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">{{ info.text }}</p>
+          <ul class="space-y-4">
+            <li
+                v-for="item in category.items"
+                :key="item.name"
+                class="flex justify-between items-center group"
+            >
+              <div class="pr-4">
+                <h4 class="font-medium text-gray-800 group-hover:text-emerald-700 transition-colors">{{ item.name }}</h4>
+                <div v-if="item.duration" class="flex items-center text-sm text-gray-500 mt-1">
+                  <UIcon name="i-heroicons-clock" class="h-4 w-4 mr-1.5 text-emerald-500" />
+                  {{ item.duration }}
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div class="backdrop-blur-lg bg-white/50 dark:bg-gray-800/50 rounded-2xl p-8 border border-white/30 dark:border-gray-700 shadow-xl">
-            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-6">Načini plaćanja</h3>
-            <div class="space-y-4">
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                <span class="text-gray-700 dark:text-gray-300">Gotovina</span>
+              <div class="flex-shrink-0 text-lg font-bold text-emerald-600 px-3 py-1">
+                {{ item.price }}
               </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                <span class="text-gray-700 dark:text-gray-300">Kartice</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                <span class="text-gray-700 dark:text-gray-300">Bankovna transakcija</span>
-              </div>
-            </div>
-            <div class="mt-8 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
-              <p class="text-sm text-gray-600 dark:text-gray-400">
-                <strong class="text-emerald-700 dark:text-emerald-400">Napomena:</strong> Cijene su izražene u eurima (€) i podložne su promjenama. Za najnovije informacije kontaktirajte nas.
-              </p>
-            </div>
-          </div>
-
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <section class="py-20 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/prostor.jpg');">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 rounded-2xl p-8 border border-white/30 dark:border-gray-700 shadow-xl">
-          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Spremni?</h2>
-          <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">Rezervirajte svoj tretman ili se obratite za dodatne informacije</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://www.sredime.hr/zagreb/salon-in-statera" target="_blank" class="bg-emerald-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl">
-              Rezervirajte tretman
-            </a>
-            <a href="tel:+385955053943" class="bg-emerald-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl">
-              Nazovite
-            </a>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start bg-white rounded-3xl shadow-xl shadow-gray-200/40 border border-gray-100 p-6 sm:p-10">
+
+        <div class="lg:col-span-7">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <UIcon name="i-heroicons-information-circle" class="w-6 h-6 text-emerald-600" />
+            Važne informacije
+          </h2>
+          <div class="space-y-6">
+            <div v-for="info in additionalInfo" :key="info.title" class="flex items-start gap-4">
+              <div class="flex mt-1 bg-emerald-50 p-1.5 rounded-full text-emerald-600 flex-shrink-0">
+                <UIcon name="i-heroicons-check" class="h-4 w-4" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">{{ info.title }}</h4>
+                <p class="text-gray-600 text-sm mt-1 leading-relaxed">{{ info.text }}</p>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="lg:col-span-5 bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <UIcon name="i-heroicons-credit-card" class="w-6 h-6 text-emerald-600" />
+            Načini plaćanja
+          </h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3 bg-white p-3 rounded-xl shadow-sm border border-gray-100">
+              <UIcon name="i-heroicons-banknotes" class="w-5 h-5 text-emerald-600" />
+              <span class="text-gray-700 font-medium">Gotovina</span>
+            </li>
+            <li class="flex items-center gap-3 bg-white p-3 rounded-xl shadow-sm border border-gray-100">
+              <UIcon name="i-heroicons-credit-card" class="w-5 h-5 text-emerald-600" />
+              <span class="text-gray-700 font-medium">Kartice</span>
+            </li>
+            <li class="flex items-center gap-3 bg-white p-3 rounded-xl shadow-sm border border-gray-100">
+              <UIcon name="i-heroicons-device-phone-mobile" class="w-5 h-5 text-emerald-600" />
+              <span class="text-gray-700 font-medium">Bankovna transakcija</span>
+            </li>
+          </ul>
+
+          <div class="p-4 bg-emerald-100/50 rounded-xl border border-emerald-200 text-sm text-gray-700">
+            <strong class="text-emerald-700 block mb-1">Napomena:</strong>
+            Cijene su izražene u eurima (€) i podložne su promjenama. Za najnovije informacije kontaktirajte nas.
+          </div>
+        </div>
+
       </div>
-    </section>
+
+    </div>
+
+    <CtaSection />
 
   </div>
 </template>

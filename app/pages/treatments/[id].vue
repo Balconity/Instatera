@@ -4,7 +4,7 @@ const allTreatments = useTreatments()
 
 const img = useImage()
 
-const backgroundUrl = computed(() => {
+const footerBackgroundUrl = computed(() => {
   return img('/images/prostor.jpg', {
     width: 1920,
     quality: 80,
@@ -42,123 +42,114 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="pt-16 min-h-screen bg-gray-50">
+  <div class="pt-20 pb-20 min-h-screen bg-gray-50 flex flex-col">
 
-    <div v-if="!treatment" class="flex justify-center items-center py-32">
-      <div class="backdrop-blur-lg bg-red-50 rounded-2xl p-8 border border-red-200 shadow-xl text-red-600 font-medium max-w-lg text-center">
-        Tretman nije pronađen. Molimo vratite se na popis tretmana.
-        <br><br>
-        <NuxtLink to="/treatments" class="text-emerald-600 underline">Povratak na tretmane</NuxtLink>
+    <div v-if="!treatment" class="flex-grow flex justify-center items-center py-32 px-4">
+      <div class="bg-white rounded-3xl p-10 border border-red-100 shadow-xl max-w-lg text-center">
+        <UIcon name="i-heroicons-exclamation-triangle" class="w-16 h-16 text-red-500 mx-auto mb-6" />
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Tretman nije pronađen</h2>
+        <p class="text-gray-600 mb-8">Tražena stranica ne postoji ili je premještena.</p>
+        <NuxtLink to="/treatments" class="inline-flex items-center justify-center px-8 py-3 bg-emerald-600 text-white font-semibold rounded-full hover:bg-emerald-700 transition-colors">
+          Povratak na sve tretmane
+        </NuxtLink>
       </div>
     </div>
 
-    <div v-else>
-      <section class="flex flex-col-reverse md:flex-row max-w-7xl mx-auto">
-        <div class="p-6 md:basis-1/2">
-          <div class="backdrop-blur-lg bg-white/40 rounded-3xl p-8 border border-white/30  shadow-2xl max-w-4xl">
+    <div v-else class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow w-full">
 
-            <NuxtLink to="/treatments" class="inline-flex items-center text-emerald-600 hover:text-emerald-700 mb-6 transition-colors">
-              <UIcon name="i-heroicons-arrow-left" class="h-5 w-5 mr-2" />
-              Nazad na tretmane
-            </NuxtLink>
+      <div class="mb-8 mt-4">
+        <NuxtLink to="/treatments" class="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium transition-colors">
+          <UIcon name="i-heroicons-arrow-left" class="w-5 h-5 mr-2" />
+          Nazad na sve tretmane
+        </NuxtLink>
+      </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800  mb-6">
-              {{ treatment.title }}
-            </h1>
+      <div class="relative mb-12">
+        <div class="absolute -inset-4 bg-emerald-100/50 rounded-full blur-2xl -z-10"></div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+          {{ treatment.title }}
+        </h1>
+        <p class="text-lg text-gray-600 leading-relaxed max-w-3xl">
+          {{ treatment.description }}
+        </p>
+      </div>
 
-            <div class="flex flex-col gap-4 mb-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20">
 
-              <div class="backdrop-blur-sm bg-white/50 rounded-lg p-4 border border-white/20">
-                <div class="flex items-center space-x-2 mb-2">
-                  <UIcon name="i-heroicons-clock" class="h-5 w-5 text-emerald-600" />
-                  <span class="text-sm font-medium text-gray-600">Trajanje</span>
-                </div>
-                <p class="text-lg font-semibold text-gray-800">{{ treatment.duration }}</p>
-              </div>
+        <div class="lg:col-span-7 space-y-8">
+          <div
+              v-for="(block, index) in treatment.content"
+              :key="index"
+              class="bg-white rounded-3xl p-8 shadow-xl shadow-gray-200/40 border border-gray-100"
+          >
+            <h3 v-if="block.question" class="text-2xl font-bold text-gray-800 mb-4">
+              {{ block.question }}
+            </h3>
 
-              <div class="backdrop-blur-sm bg-white/50 rounded-lg p-4 border border-white/20">
-                <div class="flex items-center space-x-2 mb-2">
-                  <UIcon name="i-heroicons-users" class="h-5 w-5 text-emerald-600" />
-                  <span class="text-sm font-medium text-gray-600">Prilagođeno za</span>
-                </div>
-                <p class="text-lg font-semibold text-gray-800">{{ treatment.targetAudience }}</p>
-              </div>
-
-              <div class="backdrop-blur-sm bg-white/50 rounded-lg p-4 border border-white/20">
-                <div class="flex items-center space-x-2 mb-2">
-                  <span class="text-sm font-medium text-gray-600">Cijena</span>
-                </div>
-                <p class="text-2xl font-bold text-emerald-600">{{ treatment.price }}</p>
-              </div>
-
-            </div>
-
-            <a href="https://www.sredime.hr/zagreb/salon-in-statera" target="_blank" class="bg-emerald-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl inline-block">
-              Rezervirajte tretman
-            </a>
-
-          </div>
-        </div>
-
-        <div class="md:basis-1/2 flex items-center justify-center p-6">
-          <NuxtImg
-              :src="treatment.image"
-              :alt="treatment.title"
-              class="w-full h-auto rounded-3xl shadow-lg object-cover aspect-[4/3] md:aspect-auto"
-          />
-        </div>
-      </section>
-
-      <section class="py-10">
-        <div class="max-w-7xl mx-auto px-6">
-          <div class="grid grid-cols-1 gap-4">
-            <div class="flex flex-col gap-6 backdrop-blur-lg bg-white/40 rounded-2xl p-8 border border-white/30 shadow-xl items-start">
-
-              <div v-for="(block, index) in treatment.content" :key="index" class="w-full">
-                <h3 class="text-xl font-semibold text-gray-800 mb-3">
-                  {{ block.question }}
-                </h3>
-
-                <p class="text-gray-700 leading-relaxed text-lg" :class="{ 'mb-3': block.list }">
-                  {{ block.answer }}
-                </p>
-
-                <ul v-if="block.list" class="space-y-2">
-                  <li v-for="(item, i) in block.list" :key="i" class="flex items-start gap-2 text-gray-700 text-lg leading-relaxed">
-                    <UIcon name="i-heroicons-check-circle" class="text-emerald-600 w-5 h-5 shrink-0 mt-1" />
-                    <span>{{ item }}</span>
-                  </li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="hero-section-wrapper">
-        <div class="hero-bg-overlay bg-emerald-50" :style="{ backgroundImage: `url('${backgroundUrl}')` }"></div>
-        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
-          <div class="glass-card">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Spremni za tretman?</h2>
-            <p class="text-lg text-gray-800 font-medium mb-8">
-              Rezervirajte svoj termin ili se obratite za dodatne informacije
+            <p class="text-gray-600 leading-relaxed text-lg" :class="{ 'mb-6': block.list }">
+              {{ block.answer }}
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://www.sredime.hr/zagreb/salon-in-statera" target="_blank" class="btn-primary">
-                Rezervirajte tretman
-              </a>
-              <a href="tel:+385955053943" class="btn-primary">
-                Nazovite
-              </a>
-              <NuxtLink to="/price-list" class="btn-glass">
-                Pogledajte cjenik
-              </NuxtLink>
-            </div>
+
+            <ul v-if="block.list" class="space-y-3">
+              <li v-for="(item, i) in block.list" :key="i" class="flex items-start gap-3 text-gray-700 text-lg leading-relaxed">
+                <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-emerald-500 shrink-0 mt-0.5" />
+                <span>{{ item }}</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
 
+        <div class="lg:col-span-5 lg:sticky lg:top-32 space-y-8">
+
+          <div class="relative">
+            <div class="absolute -inset-3 bg-emerald-100/60 rounded-[2.5rem] blur-xl -z-10 transform rotate-2"></div>
+
+            <NuxtImg
+                :src="treatment.image"
+                :alt="treatment.title"
+                class="w-full h-auto rounded-3xl shadow-lg border border-white/50 object-cover aspect-[4/3]"
+            />
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-xl shadow-gray-200/40 border border-gray-100 p-6 sm:p-8">
+
+            <div class="space-y-4 mb-8">
+              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                <div class="flex items-center text-gray-600 font-medium">
+                  <UIcon name="i-heroicons-clock" class="w-6 h-6 mr-3 text-emerald-600" />
+                  Trajanje
+                </div>
+                <span class="text-gray-800 font-semibold">{{ treatment.duration }}</span>
+              </div>
+
+              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                <div class="flex items-center text-gray-600 font-medium">
+                  <UIcon name="i-heroicons-users" class="w-6 h-6 mr-3 text-emerald-600" />
+                  Prilagođeno za
+                </div>
+                <span class="text-gray-800 font-semibold text-right">{{ treatment.targetAudience }}</span>
+              </div>
+
+              <div class="flex items-center justify-between p-4 bg-emerald-50 rounded-2xl border border-emerald-100/50">
+                <div class="flex items-center text-gray-700 font-medium">
+                  <UIcon name="i-heroicons-currency-euro" class="w-6 h-6 mr-3 text-emerald-600" />
+                  Cijena
+                </div>
+                <span class="text-2xl font-bold text-emerald-600">{{ treatment.price }}</span>
+              </div>
+            </div>
+
+            <a href="https://www.sredime.hr/zagreb/salon-in-statera" target="_blank" class="flex w-full justify-center text-white bg-emerald-600 hover:bg-emerald-700 rounded-full px-8 py-4 font-semibold transition-colors shadow-md text-lg">
+              Rezervirajte termin
+            </a>
+          </div>
+
+        </div>
+
+      </div>
     </div>
+
+    <CtaSection />
+
   </div>
 </template>

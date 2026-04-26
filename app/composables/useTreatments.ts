@@ -1,33 +1,33 @@
 export const useTreatments = () => {
     return [
         {
-            id: 'emmet',
-            title: 'Emmett tehnika',
+            id: 'emmett',
+            title: 'EMMETT tehnika',
             description: 'Nježna, manualna terapija koja tijelo dovodi u ravnotežu, ublažava bolove i poboljšava cjelokupno funkcioniranje. Preporučuje se za stres, išijas i napetost.',
             price: 'od 45€',
             duration: '30 - 60 min',
-            image: '/images/treatments/emmet.png',
+            image: '/images/treatments/emmett.png',
             targetAudience: 'Sve dobne skupine',
             content: [
                 {
-                    question: 'Što je Emmett tehnika?',
-                    answer: 'Emmett tehnika je brza, iznimno nježna i vrlo učinkovita manualna metoda opuštanja mišića. Njen cilj je brzo oslobađanje od boli, nelagode i napetosti te vraćanje tijela u stanje ravnoteže. Tretman je usmjeren na ispravljanje mišićnog tonusa, poboljšanje opsega pokreta i smanjenje stresa. Ovu jedinstvenu tehniku razvio je australski terapeut Ross Emmett.'
+                    question: 'Što je EMMETT tehnika?',
+                    answer: 'EMMETT tehnika je brza, iznimno nježna i vrlo učinkovita manualna metoda opuštanja mišića. Njen cilj je brzo oslobađanje od boli, nelagode i napetosti te vraćanje tijela u stanje ravnoteže. Tretman je usmjeren na ispravljanje mišićnog tonusa, poboljšanje opsega pokreta i smanjenje stresa. Ovu jedinstvenu tehniku razvio je australski terapeut Ross Emmett.'
                 },
                 {
-                    question: 'Po čemu se Emmett razlikuje od drugih tehnika?',
-                    answer: 'Ono što Emmett tehniku čini posebnom je primjena laganog pritiska na specifične točke u tijelu koje se nazivaju Emmett točke. Pritiskom na te senzoričke točke, mozgu se šalje signal za resetiranje i trenutno opuštanje napetog mišića. Reakcija tijela je često trenutna, a klijenti osjete promjenu, smanjenje boli i povećanje pokretljivosti već tijekom samog tretmana.'
+                    question: 'Po čemu se EMMETT razlikuje od drugih tehnika?',
+                    answer: 'Ono što EMMETT tehniku čini posebnom je primjena laganog pritiska na specifične točke u tijelu koje se nazivaju EMMETT točke. Pritiskom na te senzoričke točke, mozgu se šalje signal za resetiranje i trenutno opuštanje napetog mišića. Reakcija tijela je često trenutna, a klijenti osjete promjenu, smanjenje boli i povećanje pokretljivosti već tijekom samog tretmana.'
                 },
                 {
-                    question: 'Koje su indikacije za primjenu Emmett tehnike?',
+                    question: 'Koje su indikacije za primjenu EMMETT tehnike?',
                     answer: 'Tehnika je izvanredna za ublažavanje niza tegoba. Najčešće se primjenjuje kod: bolova u leđima i vratu, ograničene pokretljivosti ramena, problema s koljenima i zglobovima, trnaca u rukama i nogama, glavobolja, vrtoglavica te napetosti uzrokovane stresom. Također je vrlo korisna kao potpora trudnicama te u sportskoj rehabilitaciji. Budući da je izuzetno blaga, pogodna je za sve uzraste.'
                 },
                 {
                     question: 'Kako izgleda tretman i kako se pripremiti za njega?',
-                    answer: 'Tretman započinje razgovorom i procjenom trenutnog stanja. Emmett tehnika može se izvoditi izravno na koži ili preko tanke, lagane odjeće. Klijent može sjediti, stajati ili ležati. Tijekom tretmana terapeut vrši lagane pritiske, a vi se samo trebate opustiti. Često se Emmett kombinira s drugim tehnikama (poput Bowen terapije ili medicinske masaže) kako bi se postigli optimalni rezultati.'
+                    answer: 'Tretman započinje razgovorom i procjenom trenutnog stanja. EMMETT tehnika može se izvoditi izravno na koži ili preko tanke, lagane odjeće. Klijent može sjediti, stajati ili ležati. Tijekom tretmana terapeut vrši lagane pritiske, a vi se samo trebate opustiti. Često se EMMETT kombinira s drugim tehnikama (poput Bowen terapije ili medicinske masaže) kako bi se postigli optimalni rezultati.'
                 },
                 {
                     question: 'Koliko traje tretman i koliko dolazaka je potrebno?',
-                    answer: 'Sama primjena Emmett tehnike je vrlo brza. Ukupno trajanje tretmana obično ovisi o tome kombinira li se s drugim metodama i u prosjeku traje od 30 do 60 minuta. Budući da su rezultati vidljivi odmah, često je dovoljan manji broj dolazaka (1 do 3 tretmana) za rješavanje specifičnog problema.'
+                    answer: 'Sama primjena EMMETT tehnike je vrlo brza. Ukupno trajanje tretmana obično ovisi o tome kombinira li se s drugim metodama i u prosjeku traje od 30 do 60 minuta. Budući da su rezultati vidljivi odmah, često je dovoljan manji broj dolazaka (1 do 3 tretmana) za rješavanje specifičnog problema.'
                 }
             ]
         },

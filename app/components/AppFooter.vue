@@ -45,15 +45,15 @@ const legalLinks = [
 </script>
 
 <template>
-  <footer class="mt-20 bg-white border-t border-gray-200">
+  <footer class="mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left mb-12">
 
         <div class="col-span-1 md:col-span-2 flex flex-col items-center md:items-start">
-          <NuxtLinkLocale to="/" class="flex items-center justify-center md:justify-start space-x-2 mb-4">
+          <NuxtLink to="/" class="flex items-center justify-center md:justify-start space-x-2 mb-4">
             <AppLogo class="h-12 w-auto" />
-          </NuxtLinkLocale>
+          </NuxtLink>
           <p class="text-gray-600 leading-relaxed max-w-sm">
             Vaš partner u zdravlju i oporavku.
           </p>
@@ -99,7 +99,7 @@ const legalLinks = [
 
       </div>
 
-      <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
 
         <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
           <NuxtLink

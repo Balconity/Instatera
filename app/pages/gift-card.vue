@@ -1,37 +1,17 @@
 <script setup lang="ts">
-const img = useImage()
-
 useSeoMeta({
   title: 'Poklon bon',
   description: 'Iznenadite svoje najdraže poklon bonom za masažu, fizioterapiju ili Bowen tretman. Idealan poklon za zdravlje i opuštanje u In Statera centru u Zagrebu.',
-
   ogTitle: 'Poklonite zdravlje i opuštanje | In Statera poklon bon',
   ogDescription: 'Tražite savršen poklon? Obradujte svoje voljene In Statera poklon bonom za stručne fizioterapijske tretmane i medicinske masaže.',
-  ogImage: '/gift-card.jpg',
+  ogImage: '/images/gift-card.jpg',
   ogType: 'website',
   ogUrl: 'https://instatera.hr/gift-card',
-
   twitterCard: 'summary_large_image',
   twitterTitle: 'Poklon bon | In Statera',
   twitterDescription: 'Iznenadite svoje najdraže poklon bonom za masažu i fizioterapiju. Idealan poklon za zdravlje.',
-  twitterImage: '/gift-card.webp'
+  twitterImage: '/images/gift-card.jpg'
 })
-
-const backgroundUrl = computed(() => {
-  return img('/images/gift-card.jpg', {
-    width: 1920,
-    quality: 80,
-    format: 'webp'
-  })
-});
-
-const footerBackgroundUrl = computed(() => {
-  return img('/images/prostor.jpg', {
-    width: 1920,
-    quality: 80,
-    format: 'webp'
-  })
-});
 
 const benefits = [
   'Valjan je 3 mjeseca od datuma kupovine',
@@ -48,107 +28,88 @@ const infoList = [
 </script>
 
 <template>
-  <div class="pt-16">
+  <div class="pt-20 min-h-screen bg-gray-50 flex flex-col">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow mb-24 w-full">
 
-    <section class="hero-section-wrapper">
-      <div
-          class="hero-bg-overlay"
-          :style="{ backgroundImage: `url('${backgroundUrl}')` }"
-      ></div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mt-8">
 
-      <div class="absolute inset-0"></div>
+        <div class="lg:col-span-5 lg:sticky lg:top-32 space-y-10">
 
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-32 text-center">
-      </div>
-    </section>
-
-    <section class="py-20 bg-white dark:bg-gray-950">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            Prednosti In Statera poklon bonova
-          </h2>
-          <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Više od poklona - ulaznica u svijet zdravlja i dobrobiti
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div
-              v-for="benefit in benefits"
-              :key="benefit"
-              class="backdrop-blur-lg bg-emerald-50/50 dark:bg-gray-800/40 rounded-2xl p-6 border border-emerald-100 dark:border-gray-700 shadow-sm flex items-center space-x-4"
-          >
-            <div class="flex bg-emerald-100 dark:bg-emerald-900/50 rounded-full p-2 flex-shrink-0">
-              <UIcon name="i-heroicons-check" class="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-            </div>
-            <span class="text-gray-700 dark:text-gray-200 font-medium">{{ benefit }}</span>
+          <div>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+              Poklonite <span class="text-emerald-600">zdravlje i opuštanje</span>
+            </h1>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Više od poklona - ulaznica u svijet zdravlja i dobrobiti. Odaberite iznos ili konkretan tretman i iznenadite svoje najdraže.
+            </p>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="py-20 bg-gray-50 dark:bg-gray-900">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="glass-card text-left">
-          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6 text-center">
-            Naručite poklon bon
-          </h2>
+          <div class="relative w-full max-w-md">
+            <div class="absolute -inset-2 bg-emerald-100/60 rounded-3xl blur-xl -z-10 transform rotate-2"></div>
+            <NuxtImg
+                src="/images/gift-card.jpg"
+                alt="In Statera poklon bon"
+                class="w-full h-auto rounded-2xl shadow-lg border border-white/50 object-cover aspect-[4/3]"
+            />
+          </div>
 
-          <div class="grid grid-cols-1 gap-6">
-            <div class="backdrop-blur-sm bg-white/60 dark:bg-gray-800/60 rounded-xl p-6 border border-white/40 dark:border-gray-600">
-              <p class="text-gray-600 dark:text-gray-300 mb-6 text-sm text-center">
-                Ispunite obrazac ispod, a mi ćemo vam se povratno javiti s detaljima za uplatu.
-              </p>
-
-              <GiftCardForm />
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+            <div
+                v-for="benefit in benefits"
+                :key="benefit"
+                class="backdrop-blur-sm bg-white/60 rounded-xl p-4 border border-emerald-100 shadow-sm flex items-center space-x-4"
+            >
+              <div class="flex bg-emerald-100 rounded-full p-2 flex-shrink-0">
+                <UIcon name="i-heroicons-check" class="h-5 w-5 text-emerald-600" />
+              </div>
+              <span class="text-gray-700 font-medium text-sm">{{ benefit }}</span>
             </div>
           </div>
 
-          <div class="mt-8 p-6 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg text-left border border-emerald-100 dark:border-emerald-800/50">
-            <h4 class="font-medium text-gray-800 dark:text-white mb-3">Važne informacije:</h4>
-            <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
+        </div>
+
+        <div class="lg:col-span-7">
+
+          <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 sm:p-10 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">
+              Naručite poklon bon
+            </h2>
+            <p class="text-gray-600 mb-8 text-sm">
+              Ispunite obrazac, a mi ćemo vam se povratno javiti s detaljima za uplatu.
+            </p>
+
+            <GiftCardForm />
+          </div>
+
+          <div class="p-6 bg-emerald-50 rounded-2xl text-left border border-emerald-100/50">
+            <h4 class="font-medium text-gray-800 mb-3 flex items-center gap-2">
+              <UIcon name="i-heroicons-information-circle" class="w-5 h-5 text-emerald-600" />
+              Važne informacije
+            </h4>
+            <ul class="text-sm text-gray-600 space-y-2 mb-6">
               <li v-for="info in infoList" :key="info" class="flex items-start">
-                <span class="text-emerald-600 mr-2">•</span>
+                <span class="text-emerald-600 mr-2 font-bold">•</span>
                 {{ info }}
               </li>
             </ul>
 
-            <div class="mt-6 pt-4 border-t border-emerald-200/50 dark:border-emerald-800/50">
-              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            <div class="pt-4 border-t border-emerald-200/50">
+              <p class="text-sm text-gray-600 mb-2">
                 Preferirate telefonski dogovor?
               </p>
-              <a href="tel:+385955053943" class="inline-flex items-center text-emerald-700 dark:text-emerald-400 font-semibold hover:text-emerald-800 transition-colors">
+              <a href="tel:+385955053943" class="inline-flex items-center text-emerald-700 font-semibold hover:text-emerald-800 transition-colors">
                 <UIcon name="i-heroicons-phone" class="w-4 h-4 mr-2" />
                 Nazovite +385 95 505 3943
               </a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="hero-section-wrapper">
-      <div class="hero-bg-overlay bg-emerald-50 dark:bg-emerald-950/20" :style="{ backgroundImage: `url('${footerBackgroundUrl}')` }"></div>
-      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
-        <div class="glass-card">
-          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Spremni za tretman?</h2>
-          <p class="text-lg text-gray-800 dark:text-gray-200 font-medium mb-8">
-            Rezervirajte svoj termin ili se obratite za dodatne informacije
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://www.sredime.hr/zagreb/salon-in-statera" target="_blank" class="btn-primary">
-              Rezervirajte tretman
-            </a>
-            <a href="tel:+385955053943" class="btn-primary">
-              Nazovite
-            </a>
-            <NuxtLink to="/price-list" class="btn-glass">
-              Pogledajte cjenik
-            </NuxtLink>
-          </div>
         </div>
+
       </div>
-    </section>
+    </div>
+
+    <CtaSection />
+
   </div>
 </template>
