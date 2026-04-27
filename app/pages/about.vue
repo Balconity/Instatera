@@ -25,7 +25,7 @@ const stats = [
 </script>
 
 <template>
-  <div class="pt-20 pb-20 min-h-screen bg-gray-50 flex flex-col">
+  <div class="pt-20 pb-20 min-h-screen bg-gray-50 flex flex-col overflow-x-hidden">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow w-full">
 

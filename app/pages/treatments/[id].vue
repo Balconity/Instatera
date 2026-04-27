@@ -32,7 +32,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="pt-20 pb-20 min-h-screen bg-gray-50 flex flex-col">
+  <div class="pt-20 pb-20 min-h-screen bg-gray-50 flex flex-col overflow-x-hidden">
 
     <div v-if="!treatment" class="flex-grow flex justify-center items-center py-32 px-4">
       <div class="bg-white rounded-3xl p-10 border border-red-100 shadow-xl max-w-lg text-center">

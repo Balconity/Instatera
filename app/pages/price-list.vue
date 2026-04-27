@@ -108,7 +108,7 @@ const additionalInfo = [
       <div class="text-center max-w-3xl mx-auto mb-16 relative mt-8">
         <div class="absolute -inset-4 bg-emerald-100/50 rounded-full blur-2xl -z-10"></div>
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
-          Cjenik <span class="text-emerald-600">usluga</span>
+          Cjenik
         </h1>
         <p class="text-lg text-gray-600 leading-relaxed">
           Pregledajte cijene svih naših tretmana. Za sva pitanja o kombiniranju terapija, slobodno nas kontaktirajte.

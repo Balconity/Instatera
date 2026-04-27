@@ -36,7 +36,7 @@ const footerBackgroundUrl = computed(() => {
       <div class="text-center max-w-3xl mx-auto mb-16 relative mt-8">
         <div class="absolute -inset-4 bg-emerald-100/50 rounded-full blur-2xl -z-10"></div>
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
-          Naši <span class="text-emerald-600">tretmani</span>
+          Tretmani
         </h1>
         <p class="text-lg text-gray-600 leading-relaxed">
           Otkrijte sveobuhvatan spektar tretmana prilagođenih vašim specifičnim potrebama. Odaberite terapiju i vratite tijelo u ravnotežu.
