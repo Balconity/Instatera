@@ -105,7 +105,7 @@ const additionalInfo = [
   <div class="pt-20 min-h-screen bg-gray-50 flex flex-col">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow mb-24">
 
-      <div class="text-center max-w-3xl mx-auto mb-16 relative">
+      <div class="text-center max-w-3xl mx-auto mb-16 relative mt-8">
         <div class="absolute -inset-4 bg-emerald-100/50 rounded-full blur-2xl -z-10"></div>
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
           Cjenik <span class="text-emerald-600">usluga</span>

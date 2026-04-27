@@ -101,12 +101,10 @@ const reviews = [
         </div>
 
         <div class="lg:col-span-6 relative flex justify-center mt-10 lg:mt-0">
-          <div class="absolute -inset-4 bg-emerald-100/60 rounded-[3rem] blur-2xl -z-10 transform rotate-3"></div>
-
           <NuxtImg
               src="/images/hero.jpg"
               alt="In Statera Fizioterapija"
-              class="w-full max-w-lg h-auto rounded-3xl shadow-xl border border-white object-cover aspect-[4/3] lg:aspect-square"
+              class="w-full max-w-lg h-auto rounded-3xl shadow-xl object-cover aspect-[4/3] lg:aspect-square"
           />
         </div>
 
