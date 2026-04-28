@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import type { FormError, FormSubmitEvent } from '@nuxt/ui'  // ← v3 import path
-
-const { t } = useI18n()
+import type { FormError, FormSubmitEvent } from '@nuxt/ui'
 
 const form = reactive({
   name: '',
@@ -67,12 +65,8 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
       <UTextarea v-model="form.message" :rows="5" placeholder="Upišite poruku" class="w-full" />
     </UFormField>
 
-    <UAlert v-if="successMessage" title="Bravo!" :description="successMessage" color="success" variant="subtle" icon="i-heroicons-check-circle" />
-    <UAlert v-if="errorMessage" title="Error" :description="errorMessage" color="error" variant="subtle" icon="i-heroicons-exclamation-circle" />
-
     <UButton type="submit" color="primary" block size="lg" :loading="isSubmitting">
       {{ isSubmitting ? 'Slanje u tijeku' : 'Pošalji' }}
     </UButton>
-
   </UForm>
 </template>

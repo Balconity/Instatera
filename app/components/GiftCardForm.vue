@@ -259,7 +259,7 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
       />
     </UFormField>
 
-    <UAlert v-if="successMessage" title="Upit poslan" :description="successMessage" color="success" variant="subtle" icon="i-heroicons-check-circle" class="mt-6" />
+    <UAlert v-if="successMessage" title="Zahtjev poslan" :description="successMessage" color="success" variant="subtle" icon="i-heroicons-check-circle" class="mt-6" />
     <UAlert v-if="errorMessage" title="Greška" :description="errorMessage" color="error" variant="subtle" icon="i-heroicons-exclamation-circle" class="mt-6" />
 
     <div class="pt-6 mt-2 border-t border-gray-200 dark:border-gray-700">

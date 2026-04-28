@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
 useSeoMeta({
   title: 'Fizioterapija i masaža Zagreb',
   description: 'In Statera je centar fizioterapije u Zagrebu koji nudi holistički pristup zdravlju. Ublažite bol i vratite ravnotežu uz Bowen tehniku, Tecar terapiju i stručne masaže.',
@@ -62,10 +64,46 @@ const reviews = [
   { name: 'Marina', initial: 'M', treatment: 'Medicinska masaža', text: 'Sve pohvale za kolegicu fizioterapeut, od strucnosti, profesionalnosti, pristupa i jako ugodnog amijenta! Sve preporuke!' },
   { name: 'Ugur', initial: 'U', treatment: 'Medicinska masaža', text: 'Najbolja masaza koju sam ikad probao, vrlo stručan i profesionalan pristup i ugodan prostor.' }
 ]
+
+// 1. Izračunavanje prosječne dužine teksta recenzija
+const avgReviewLength = Math.round(reviews.reduce((sum, r) => sum + r.text.length, 0) / reviews.length)
+
+// 2. State za otvorene (expanded) recenzije
+const expandedReviews = ref<Record<number, boolean>>({})
+
+const toggleReview = (index: number) => {
+  expandedReviews.value[index] = !expandedReviews.value[index]
+}
+
+// 3. Logika za Autoplay Carousel
+const carouselRef = ref<any>(null)
+let autoplayTimer: ReturnType<typeof setInterval>
+
+const startAutoplay = () => {
+  autoplayTimer = setInterval(() => {
+    if (carouselRef.value) {
+      carouselRef.value.next()
+    }
+  }, 4500) // Vrtuljak se vrti svakih 4.5 sekundi
+}
+
+const pauseAutoplay = () => {
+  if (autoplayTimer) {
+    clearInterval(autoplayTimer)
+  }
+}
+
+onMounted(() => {
+  startAutoplay()
+})
+
+onUnmounted(() => {
+  pauseAutoplay()
+})
 </script>
 
 <template>
-  <div class="pt-20 bg-gray-50 flex flex-col min-h-screen">
+  <div class="pt-20 bg-gray-50 flex flex-col min-h-screen overflow-x-hidden">
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -206,8 +244,9 @@ const reviews = [
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">Pročitajte iskustva i dojmove naših zadovoljnih klijenata.</p>
         </div>
 
-        <div>
+        <div @mouseenter="pauseAutoplay" @mouseleave="startAutoplay" @touchstart="pauseAutoplay" @touchend="startAutoplay">
           <UCarousel
+              ref="carouselRef"
               :items="reviews"
               :ui="{ item: 'basis-full md:basis-1/2 lg:basis-1/3' }"
               class="overflow-visible px-8 md:px-12"
@@ -232,20 +271,29 @@ const reviews = [
               </button>
             </template>
 
-            <template #default="{ item }">
+            <template #default="{ item, index }">
               <div class="px-4 w-full h-full py-4">
-                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 h-full flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 h-full flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
                   <div>
                     <div class="flex items-center mb-6 text-yellow-400 gap-1">
                       <UIcon name="i-heroicons-star-solid" v-for="n in 5" :key="n" class="w-5 h-5" />
                     </div>
-                    <p class="text-gray-700 mb-8 italic leading-relaxed font-medium">
-                      "{{ item.text }}"
+
+                    <p class="text-gray-700 mb-6 italic leading-relaxed font-medium transition-all duration-300">
+                      "{{ expandedReviews[index] || item.text.length <= avgReviewLength ? item.text : item.text.substring(0, avgReviewLength) + '...' }}"
+
+                      <button
+                          v-if="item.text.length > avgReviewLength"
+                          @click="toggleReview(index)"
+                          class="text-emerald-600 font-bold text-sm ml-1 hover:text-emerald-700 hover:underline focus:outline-none"
+                      >
+                        {{ expandedReviews[index] ? 'Prikaži manje' : 'Pročitaj više' }}
+                      </button>
                     </p>
                   </div>
 
-                  <div class="flex items-center pt-4 border-t border-gray-200">
-                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0 border border-gray-200">
+                  <div class="flex items-center pt-4 border-t border-gray-200 mt-auto">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0 border border-gray-200 shadow-sm">
                       <span class="text-emerald-600 font-bold text-lg">{{ item.initial }}</span>
                     </div>
                     <div class="ml-4">
