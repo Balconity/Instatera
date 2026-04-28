@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-// Import Swiper komponenti i modula
+// Import Swiper komponenti i modula (uklonjena Pagination)
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import { Autoplay, Navigation } from 'swiper/modules'
 
 // Import Swiper stilova
 import 'swiper/css'
 import 'swiper/css/navigation'
-import 'swiper/css/pagination'
 
 useSeoMeta({
   title: 'Fizioterapija i masaža Zagreb',
@@ -41,12 +40,48 @@ const features = [
 ]
 
 const featuredTreatments = [
-  { title: 'Bowen terapija', description: 'Nježna terapija koja potiče prirodni proces ozdravljenja', link: '/treatments/bowen', color: '#CBBA9C' }, // Svijetla pješčana
-  { title: 'EMMETT tehnika', description: 'Učinkovita tehnika laganog pritiska za brzo opuštanje mišića i otklanjanje boli', link: '/treatments/emmett', color: '#A0A799' }, // Sivkasto-zelena
-  { title: 'Tecar terapija', description: 'Napredna radiofrekvencijska terapija za brži oporavak', link: '/treatments/tecar', color: '#B5A58A' }, // Topla zemljana
-  { title: 'Terapijske vježbe', description: 'Individualan program vježbi za brži oporavak', link: '/treatments/terapijske-vjezbe', color: '#847F7E' }, // Tamnija topla siva
-  { title: 'Deep lifting masaža lica', description: 'Neinvazivno zatezanje i pomlađivanje kože', link: '/treatments/deep-lifting-masaza-lica', color: '#C6AE8C' }, // Topla bež/ružičasta
-  { title: 'Bukalna masaža', description: 'Inovativna masaža lica za prirodno pomlađivanje', link: '/treatments/bukalna-masaza', color: '#968E8D' }  // Hladnija siva
+  {
+    title: 'Bowen terapija',
+    description: 'Nježna terapija koja potiče prirodni proces ozdravljenja',
+    link: '/treatments/bowen',
+    image: '/images/treatments/bowen.jpg',
+    color: '#CBBA9C'
+  },
+  {
+    title: 'EMMETT tehnika',
+    description: 'Učinkovita tehnika laganog pritiska za brzo opuštanje mišića i otklanjanje boli',
+    link: '/treatments/emmett',
+    image: '/images/treatments/emmett.png',
+    color: '#A0A799'
+  },
+  {
+    title: 'Tecar terapija',
+    description: 'Napredna radiofrekvencijska terapija za brži oporavak',
+    link: '/treatments/tecar',
+    image: '/images/treatments/tecar.jpg',
+    color: '#B5A58A'
+  },
+  {
+    title: 'Terapijske vježbe',
+    description: 'Individualan program vježbi za brži oporavak',
+    link: '/treatments/terapijske-vjezbe',
+    image: '/images/treatments/vjezbe.jpg',
+    color: '#847F7E'
+  },
+  {
+    title: 'Deep lifting masaža lica',
+    description: 'Neinvazivno zatezanje i pomlađivanje kože',
+    link: '/treatments/deep-lifting-masaza-lica',
+    image: '/images/treatments/deep-lifting.jpg',
+    color: '#C6AE8C'
+  },
+  {
+    title: 'Bukalna masaža',
+    description: 'Inovativna masaža lica za prirodno pomlađivanje',
+    link: '/treatments/bukalna-masaza',
+    image: '/images/treatments/bukalna.jpg',
+    color: '#968E8D'
+  }
 ]
 
 const reviews = [
@@ -73,26 +108,22 @@ const reviews = [
   { name: 'Ugur', initial: 'U', treatment: 'Medicinska masaža', text: 'Najbolja masaza koju sam ikad probao, vrlo stručan i profesionalan pristup i ugodan prostor.' }
 ]
 
-// Izračunavanje prosječne dužine teksta recenzija
 const avgReviewLength = Math.round(reviews.reduce((sum, r) => sum + r.text.length, 0) / reviews.length)
 
-// State za otvorene (expanded) recenzije
 const expandedReviews = ref<Record<number, boolean>>({})
 
 const toggleReview = (index: number) => {
   expandedReviews.value[index] = !expandedReviews.value[index]
 }
 
-// Swiper Setup
-const swiperModules = [Autoplay, Navigation, Pagination]
+// Swiper Setup - maknuta paginacija
+const swiperModules = [Autoplay, Navigation]
 </script>
 
 <template>
   <div class="pt-20 bg-gray-50 flex flex-col min-h-screen overflow-x-hidden">
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 w-full relative overflow-x-hidden">
-      <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-100/50 rounded-full blur-3xl pointer-events-none overflow-hidden"></div>
-
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
 
         <div class="lg:col-span-6 text-center lg:text-left z-10">
@@ -224,34 +255,37 @@ const swiperModules = [Autoplay, Navigation, Pagination]
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <NuxtLink
-              v-for="(treatment, index) in featuredTreatments"
+              v-for="treatment in featuredTreatments"
               :key="treatment.title"
               :to="treatment.link"
-              class="group bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col h-full relative overflow-hidden"
-              :style="{ '--stone-color': treatment.color }"
+              class="group relative flex flex-col justify-end h-72 sm:h-80 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
           >
-            <div class="absolute -bottom-6 -right-2 text-[7rem] leading-none font-black opacity-[0.07] group-hover:opacity-[0.15] transition-opacity duration-500 pointer-events-none select-none text-[var(--stone-color)]">
-              0{{ index + 1 }}
-            </div>
+            <NuxtImg
+                :src="treatment.image"
+                :alt="treatment.title"
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+            />
 
-            <div class="relative z-10 flex-grow flex flex-col">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-gray-900/10 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
 
-              <div class="w-10 h-1.5 rounded-full mb-6 group-hover:w-20 transition-all duration-500 ease-out bg-[var(--stone-color)]"></div>
+            <div class="relative m-4 sm:m-5 p-5 sm:p-6 bg-white/70 backdrop-blur-md rounded-2xl border border-white/50 group-hover:bg-white/90 transition-colors duration-500 flex flex-col">
 
-              <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[var(--stone-color)] transition-colors duration-300 leading-tight">
+              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors duration-300 leading-tight">
                 {{ treatment.title }}
               </h3>
 
-              <p class="text-gray-600 leading-relaxed mb-6 font-medium flex-grow">
+              <p class="text-sm text-gray-700 line-clamp-2 mb-4 font-medium">
                 {{ treatment.description }}
               </p>
 
-              <div class="flex items-center text-gray-400 font-semibold group-hover:text-[var(--stone-color)] transition-colors duration-300 pt-4 border-t border-gray-50 mt-auto">
+              <div class="flex items-center text-emerald-700 font-bold text-sm mt-auto">
                 <span>Saznajte više</span>
-                <UIcon name="i-heroicons-arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <UIcon name="i-heroicons-arrow-right" class="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
+
             </div>
           </NuxtLink>
         </div>
@@ -283,13 +317,14 @@ const swiperModules = [Autoplay, Navigation, Pagination]
           </p>
         </div>
 
-        <div class="relative px-2 sm:px-12">
+        <div class="relative px-8 sm:px-16">
 
-          <div class="swiper-button-prev-custom hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 bg-white border border-gray-200 rounded-full shadow-md items-center justify-center text-emerald-600 hover:bg-emerald-50 cursor-pointer transition-colors focus:outline-none">
-            <UIcon name="i-heroicons-chevron-left-24-solid" class="w-6 h-6" />
+          <div class="swiper-button-prev-custom flex absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 z-20 items-center justify-center text-gray-400 hover:text-emerald-600 hover:-translate-x-1 cursor-pointer transition-all focus:outline-none">
+            <UIcon name="i-heroicons-chevron-left" class="w-8 h-8 md:w-10 md:h-10" />
           </div>
-          <div class="swiper-button-next-custom hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 bg-white border border-gray-200 rounded-full shadow-md items-center justify-center text-emerald-600 hover:bg-emerald-50 cursor-pointer transition-colors focus:outline-none">
-            <UIcon name="i-heroicons-chevron-right-24-solid" class="w-6 h-6" />
+
+          <div class="swiper-button-next-custom flex absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 z-20 items-center justify-center text-gray-400 hover:text-emerald-600 hover:translate-x-1 cursor-pointer transition-all focus:outline-none">
+            <UIcon name="i-heroicons-chevron-right" class="w-8 h-8 md:w-10 md:h-10" />
           </div>
 
           <Swiper
@@ -306,15 +341,14 @@ const swiperModules = [Autoplay, Navigation, Pagination]
               prevEl: '.swiper-button-prev-custom',
               nextEl: '.swiper-button-next-custom'
             }"
-              :pagination="{ clickable: true }"
               :breakpoints="{
               768: { slidesPerView: 2, spaceBetween: 24 },
               1024: { slidesPerView: 3, spaceBetween: 32 }
             }"
-              class="reviews-swiper"
+              class="!pb-12 !pt-4 !-mb-8"
           >
-            <SwiperSlide v-for="(item, index) in reviews" :key="index" class="!h-auto pb-4">
-              <div class="bg-gray-50 rounded-3xl p-8 lg:p-10 border border-gray-100 h-full flex flex-col shadow-sm hover:shadow-lg transition-all duration-300">
+            <SwiperSlide v-for="(item, index) in reviews" :key="index" class="!h-auto">
+              <div class="bg-gray-50 rounded-3xl p-8 lg:p-10 border border-gray-100 h-full flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 
                 <div class="flex-grow flex flex-col">
                   <div class="flex items-center mb-6 gap-1">
@@ -356,25 +390,3 @@ const swiperModules = [Autoplay, Navigation, Pagination]
 
   </div>
 </template>
-
-<style>
-.reviews-swiper {
-  padding-bottom: 4rem !important;
-}
-.reviews-swiper .swiper-pagination {
-  bottom: 0 !important;
-}
-
-.swiper-pagination-bullet {
-  background-color: #d1d5db !important;
-  opacity: 1 !important;
-  width: 10px;
-  height: 10px;
-  transition: all 0.3s;
-}
-.swiper-pagination-bullet-active {
-  background-color: #059669 !important;
-  width: 24px;
-  border-radius: 5px;
-}
-</style>
