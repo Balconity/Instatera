@@ -3,7 +3,7 @@ const img = useImage();
 
 useSeoMeta({
   title: 'O meni',
-  description: 'Upoznajte Danijelu, prvostupnicu fizioterapije i certificiranu Bowen terapeutkinju. Vaš stručni partner u zdravlju, oporavku i pronalasku životne ravnoteže u Zagrebu.',
+  description: 'Upoznajte Danijelu, prvostupnicu fizioterapije i certificiranu Bowen i EMMETT terapeutkinju. Vaš stručni partner u zdravlju, oporavku i pronalasku životne ravnoteže u Zagrebu.',
 
   ogTitle: 'O meni - Upoznajte svog terapeuta | In Statera',
   ogDescription: 'Upoznajte Danijelu, vlasnicu In Statera centra. Posvećena vašem zdravlju i životu bez boli kroz holistički pristup i stručne tehnike.',
@@ -45,7 +45,7 @@ const stats = [
 
           <div class="prose prose-lg text-gray-600 max-w-none">
             <p class="text-2xl font-light text-gray-900 leading-relaxed mb-6">
-              Moje ime je <strong class="font-semibold text-emerald-700">Danijela</strong>, prvostupnica sam fizioterapije i certificirana Bowen terapeutkinja.
+              Moje ime je <strong class="font-semibold text-emerald-700">Danijela</strong>, prvostupnica sam fizioterapije i certificirana Bowen i EMMETT terapeutkinja.
             </p>
             <p class="leading-relaxed">
               Od samog početka školovanja veliki sam zaljubljenik u struku, a s godinama iskustva i daljnjim školovanjem ljubav prema fizioterapiji i dalje raste.

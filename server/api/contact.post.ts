@@ -12,7 +12,14 @@ export default defineEventHandler(async (event) => {
     })
 
     const body = await readBody(event)
-    const { name, email, subject, message } = body
+    // Dodali smo fax_number u destrukturiranje
+    const { name, email, subject, message, fax_number } = body
+
+    // HONEYPOT PROVJERA: Ako je polje ispunjeno, prekini skriptu i vrati lažni uspjeh
+    if (fax_number) {
+        console.warn('Bot pokušaj blokiran honeypot metodom.')
+        return { success: true }
+    }
 
     if (!name || !email || !subject || !message) {
         throw createError({
@@ -29,8 +36,8 @@ export default defineEventHandler(async (event) => {
 
     try {
         await transporter.sendMail({
-            from: `"Balconity Contact Form" <${config.gmailUser}>`,
-            to: config.contactEmail as string,
+            from: `"In Statera Contact" <${config.gmailUser}>`,
+            to: [config.contactEmail as string, 'tomi.levkus@gmail.com'],
             replyTo: email,
             subject: subject,
             html: `

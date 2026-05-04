@@ -12,17 +12,21 @@ export default defineEventHandler(async (event) => {
     })
 
     const body = await readBody(event)
-    // Added giftType and treatment to the destructured body
-    const { fromName, email, phone, toName, giftType, amount, treatment } = body
+    // Dodali smo fax_number u destrukturiranje
+    const { fromName, email, phone, toName, giftType, amount, treatment, fax_number } = body
 
-    // 1. Validate base fields
+    // HONEYPOT PROVJERA: Ako je polje ispunjeno, prekini skriptu i vrati lažni uspjeh
+    if (fax_number) {
+        console.warn('Bot pokušaj blokiran honeypot metodom na narudžbi poklon bona.')
+        return { success: true }
+    }
+
     if (!fromName || !email || !phone || !toName || !giftType) {
         throw createError({
             statusCode: 400, message: 'Sva polja za kontakt i ime primatelja su obavezna.'
         })
     }
 
-    // 2. Validate conditional fields based on giftType
     if (giftType === 'amount' && !amount) {
         throw createError({
             statusCode: 400, message: 'Odabrali ste iznos, ali iznos nije unesen.'
@@ -42,7 +46,6 @@ export default defineEventHandler(async (event) => {
         })
     }
 
-    // Generate dynamic HTML for the gift details based on what was selected
     const giftDetailsHtml = giftType === 'amount'
         ? `<p style="margin: 0.5rem 0; font-size: 1.25rem;">
           <strong>Iznos:</strong> <span style="color: #059669; font-weight: 800; font-size: 1.5rem;">${amount} €</span>
@@ -54,7 +57,7 @@ export default defineEventHandler(async (event) => {
     try {
         await transporter.sendMail({
             from: `"In Statera Web" <${config.gmailUser}>`,
-            to: config.contactEmail as string,
+            to: [config.contactEmail as string, 'tomi.levkus@gmail.com'],
             replyTo: email,
             subject: `Novi upit za poklon bon: ${fromName}`,
             html: `

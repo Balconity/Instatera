@@ -6,6 +6,16 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'aws-amplify'
   },
+  app: {
+    head: {
+      script: [
+        {
+          src: 'https://app.enzuzo.com/scripts/cookiebar/75ae19c4-47f0-11f1-907d-ff98ea9e8cf9',
+          defer: true
+        }
+      ]
+    }
+  },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   site: {

@@ -6,7 +6,8 @@ const form = reactive({
   name: '',
   email: '',
   subject: '',
-  message: ''
+  message: '',
+  fax_number: ''
 })
 
 const isSubmitting = ref(false)
@@ -37,7 +38,7 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
       body: event.data
     })
     successMessage.value = 'Hvala! Vaša poruka je uspješno zaprimljena.'
-    Object.assign(form, { name: '', email: '', subject: '', message: '' })
+    Object.assign(form, { name: '', email: '', subject: '', message: '', fax_number: '' })
   } catch (error: any) {
     errorMessage.value = error.data?.statusMessage || 'Nešto je pošlo po zlu. Pokušajte ponovno kasnije.'
   } finally {
@@ -49,7 +50,19 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
 <template>
   <UForm :validate="validate" :state="form" class="flex flex-col items-center gap-6" @submit="onSubmit">
 
-    <UFormField label="Ime i prezime" name="name" class="w-full">  <!-- ← UFormField, not UFormGroup -->
+    <div class="absolute opacity-0 -z-50 h-0 w-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <label for="fax_number">Nemojte ispuniti ovo polje ako ste čovjek:</label>
+      <input
+          type="text"
+          id="fax_number"
+          name="fax_number"
+          v-model="form.fax_number"
+          tabindex="-1"
+          autocomplete="off"
+      />
+    </div>
+
+    <UFormField label="Ime i prezime" name="name" class="w-full">
       <UInput v-model="form.name" placeholder="Ime i prezime" icon="i-heroicons-user" class="w-full" />
     </UFormField>
 

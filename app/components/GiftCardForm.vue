@@ -9,8 +9,9 @@ const form = reactive({
   toName: '',
   giftType: 'amount',
   amount: '',
-  customAmount: '', // Added to track custom user input
-  treatment: ''
+  customAmount: '',
+  treatment: '',
+  fax_number: ''
 })
 
 const giftTypeOptions = [
@@ -174,7 +175,7 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
     })
 
     successMessage.value = `Hvala ${form.fromName}! Uspješno smo primili vaš upit za poklon bon. Javit ćemo vam se uskoro na ${form.email}.`
-    Object.assign(form, { fromName: '', email: '', phone: '', toName: '', amount: '', customAmount: '', treatment: '', giftType: 'amount' })
+    Object.assign(form, { fromName: '', email: '', phone: '', toName: '', amount: '', customAmount: '', treatment: '', giftType: 'amount', fax_number: '' })
   } catch (error: any) {
     errorMessage.value = error.data?.message || 'Došlo je do greške prilikom slanja. Molimo pokušajte ponovno.'
   } finally {
@@ -185,6 +186,18 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
 
 <template>
   <UForm :validate="validate" :state="form" class="flex flex-col space-y-6" @submit="onSubmit">
+
+    <div class="absolute opacity-0 -z-50 h-0 w-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <label for="fax_number">Nemojte ispuniti ovo polje ako ste čovjek:</label>
+      <input
+          type="text"
+          id="fax_number"
+          name="fax_number"
+          v-model="form.fax_number"
+          tabindex="-1"
+          autocomplete="off"
+      />
+    </div>
 
     <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-2">
       <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-4">

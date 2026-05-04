@@ -6,7 +6,7 @@
   <section class="mt-auto py-12 sm:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-950 rounded-[2.5rem] shadow-2xl border border-gray-800 overflow-hidden flex flex-col lg:flex-row items-stretch relative">
+      <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-950 rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row items-stretch relative">
 
         <div class="lg:w-7/12 p-8 sm:p-12 lg:p-16 flex flex-col justify-center text-center lg:text-left z-10 order-2 lg:order-1 relative overflow-hidden">
 
