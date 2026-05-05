@@ -21,6 +21,7 @@
   "devDependencies": {
     "@nuxtjs/i18n": "^10.2.4",
     "@nuxtjs/sitemap": "^8.0.13",
-    "@types/nodemailer": "^8.0.0"
+    "@types/nodemailer": "^8.0.0",
+    "nuxt-gtag": "^4.1.0"
   }
 }

@@ -28,8 +28,12 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxtjs/i18n',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    'nuxt-gtag'
   ],
+  gtag: {
+    id: 'G-PQH8CKH89W'
+  },
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     gmailUser: process.env.SMTP_USER,
