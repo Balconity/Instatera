@@ -5,20 +5,20 @@ useSeoMeta({
 
   ogTitle: 'Cjenik usluga | In Statera',
   ogDescription: 'Pregled cijena za fizioterapijske tretmane, medicinske masaže, Bowen i EMMETT tehniku te Tecar terapiju u In Statera centru.',
-  ogImage: '/images/prostor.jpg',
+  ogImage: '/images/prostor.webp',
   ogType: 'website',
   ogUrl: 'https://instatera.hr/price-list',
 
   twitterCard: 'summary_large_image',
   twitterTitle: 'Cjenik usluga | In Statera',
   twitterDescription: 'Pregled cijena za fizioterapijske tretmane, medicinske masaže, Bowen i EMMETT tehniku.',
-  twitterImage: '/images/prostor.jpg'
+  twitterImage: '/images/prostor.webp'
 })
 
 const img = useImage()
 
 const footerBackgroundUrl = computed(() => {
-  return img('/images/prostor.jpg', {
+  return img('/images/prostor.webp', {
     width: 1920,
     quality: 80,
     format: 'webp'

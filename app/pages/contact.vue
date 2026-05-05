@@ -5,14 +5,14 @@ useSeoMeta({
 
   ogTitle: 'Kontaktirajte nas | In Statera',
   ogDescription: 'Imate pitanja ili želite rezervirati termin? Ovdje pronađite naš broj telefona, e-mail, radno vrijeme i točnu lokaciju u Zagrebu.',
-  ogImage: '/images/contact.jpg',
+  ogImage: '/images/contact.webp',
   ogType: 'website',
   ogUrl: 'https://instatera.hr/contact',
 
   twitterCard: 'summary_large_image',
   twitterTitle: 'Kontakt | In Statera',
   twitterDescription: 'Naručite se na tretman ili nas kontaktirajte za više informacija. Pronađite naše radno vrijeme i lokaciju.',
-  twitterImage: '/images/contact.jpg'
+  twitterImage: '/images/contact.webp'
 })
 
 const contactDetails = [
@@ -70,7 +70,7 @@ const workingHours = [
           <div class="relative w-full max-w-md hidden sm:block">
             <div class="absolute -inset-2 bg-emerald-100/60 rounded-3xl blur-xl -z-10 transform -rotate-2"></div>
             <NuxtImg
-                src="/images/contact.jpg"
+                src="/images/contact.webp"
                 alt="In Statera Kontakt"
                 class="w-full h-auto rounded-2xl shadow-lg border border-white/50 object-cover aspect-[4/3]"
             />

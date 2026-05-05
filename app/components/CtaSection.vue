@@ -41,7 +41,7 @@
 
         <div class="lg:w-5/12 relative min-h-[300px] lg:min-h-auto bg-gray-900 order-1 lg:order-2">
           <NuxtImg
-              src="/images/cta.jpg"
+              src="/images/cta.webp"
               alt="In Statera Rezervacija"
               class="absolute inset-0 w-full h-full object-cover"
           />

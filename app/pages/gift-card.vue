@@ -4,13 +4,13 @@ useSeoMeta({
   description: 'Iznenadite svoje najdraže poklon bonom za masažu, fizioterapiju ili Bowen tretman. Idealan poklon za zdravlje i opuštanje u In Statera centru u Zagrebu.',
   ogTitle: 'Poklonite zdravlje i opuštanje | In Statera poklon bon',
   ogDescription: 'Tražite savršen poklon? Obradujte svoje voljene In Statera poklon bonom za stručne fizioterapijske tretmane i medicinske masaže.',
-  ogImage: '/images/gift-card.jpg',
+  ogImage: '/images/gift-card.webp',
   ogType: 'website',
   ogUrl: 'https://instatera.hr/gift-card',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Poklon bon | In Statera',
   twitterDescription: 'Iznenadite svoje najdraže poklon bonom za masažu i fizioterapiju. Idealan poklon za zdravlje.',
-  twitterImage: '/images/gift-card.jpg'
+  twitterImage: '/images/gift-card.webp'
 })
 
 const benefits = [
@@ -47,7 +47,7 @@ const infoList = [
           <div class="relative w-full max-w-md">
             <div class="absolute -inset-2 bg-emerald-100/60 rounded-3xl blur-xl -z-10 transform rotate-2"></div>
             <NuxtImg
-                src="/images/gift-card.jpg"
+                src="/images/gift-card.webp"
                 alt="In Statera poklon bon"
                 class="w-full h-auto rounded-2xl shadow-lg border border-white/50 object-cover aspect-[4/3]"
             />

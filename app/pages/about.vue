@@ -7,14 +7,14 @@ useSeoMeta({
 
   ogTitle: 'O meni - Upoznajte svog terapeuta | In Statera',
   ogDescription: 'Upoznajte Danijelu, vlasnicu In Statera centra. Posvećena vašem zdravlju i životu bez boli kroz holistički pristup i stručne tehnike.',
-  ogImage: '/images/portrait.jpg',
+  ogImage: '/images/portrait.webp',
   ogType: 'profile',
   ogUrl: 'https://instatera.hr/about',
 
   twitterCard: 'summary_large_image',
   twitterTitle: 'O meni | In Statera',
   twitterDescription: 'Upoznajte Danijelu, prvostupnicu fizioterapije i vlasnicu In Statera centra u Zagrebu.',
-  twitterImage: '/images/portrait.jpg'
+  twitterImage: '/images/portrait.webp'
 })
 
 const stats = [
@@ -129,7 +129,7 @@ const stats = [
           <div class="relative mb-10">
             <div class="absolute -inset-3 bg-emerald-100/50 rounded-[2.5rem] blur-xl -z-10 transform rotate-3"></div>
             <NuxtImg
-                src="/images/portrait.jpg"
+                src="/images/portrait.webp"
                 alt="Danijela - In Statera"
                 class="w-full h-auto rounded-3xl shadow-2xl object-cover aspect-[4/5]"
             />

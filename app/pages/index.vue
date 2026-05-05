@@ -14,14 +14,14 @@ useSeoMeta({
 
   ogTitle: 'In Statera | Centar fizioterapije i holističkih tretmana',
   ogDescription: 'Riješite se boli i stresa uz stručne fizioterapijske tretmane, Bowen tehniku i masaže. Vaše tijelo zaslužuje ravnotežu.',
-  ogImage: '/images/hero.jpg',
+  ogImage: '/images/hero.webp',
   ogType: 'website',
   ogUrl: 'https://instatera.hr/',
 
   twitterCard: 'summary_large_image',
   twitterTitle: 'In Statera | Fizioterapija i masaža Zagreb',
   twitterDescription: 'Holistički pristup zdravlju. Ublažite bol i vratite ravnotežu uz stručne tretmane u In Stateri.',
-  twitterImage: '/images/hero.jpg'
+  twitterImage: '/images/hero.webp'
 })
 
 const features = [
@@ -44,42 +44,42 @@ const featuredTreatments = [
     title: 'Bowen terapija',
     description: 'Nježna terapija koja potiče prirodni proces ozdravljenja',
     link: '/treatments/bowen',
-    image: '/images/treatments/bowen.jpg',
+    image: '/images/treatments/bowen.webp',
     color: '#CBBA9C'
   },
   {
     title: 'EMMETT tehnika',
     description: 'Učinkovita tehnika laganog pritiska za brzo opuštanje mišića i otklanjanje boli',
     link: '/treatments/emmett',
-    image: '/images/treatments/emmett.png',
+    image: '/images/treatments/emmett.webp',
     color: '#A0A799'
   },
   {
     title: 'Tecar terapija',
     description: 'Napredna radiofrekvencijska terapija za brži oporavak',
     link: '/treatments/tecar',
-    image: '/images/treatments/tecar.jpg',
+    image: '/images/treatments/tecar.webp',
     color: '#B5A58A'
   },
   {
     title: 'Terapijske vježbe',
     description: 'Individualan program vježbi za brži oporavak',
     link: '/treatments/terapijske-vjezbe',
-    image: '/images/treatments/vjezbe.jpg',
+    image: '/images/treatments/vjezbe.webp',
     color: '#847F7E'
   },
   {
     title: 'Deep lifting masaža lica',
     description: 'Neinvazivno zatezanje i pomlađivanje kože',
     link: '/treatments/deep-lifting-masaza-lica',
-    image: '/images/treatments/deep-lifting.jpg',
+    image: '/images/treatments/deep-lifting.webp',
     color: '#C6AE8C'
   },
   {
     title: 'Bukalna masaža',
     description: 'Inovativna masaža lica za prirodno pomlađivanje',
     link: '/treatments/bukalna-masaza',
-    image: '/images/treatments/bukalna.jpg',
+    image: '/images/treatments/bukalna.webp',
     color: '#968E8D'
   }
 ]
@@ -160,7 +160,7 @@ const swiperModules = [Autoplay, Navigation]
 
         <div class="lg:col-span-6 relative flex justify-center mt-10 lg:mt-0">
           <NuxtImg
-              src="/images/hero.jpg"
+              src="/images/hero.webp"
               alt="In Statera Fizioterapija"
               class="w-full max-w-lg h-auto rounded-3xl shadow-xl object-cover aspect-[4/3] lg:aspect-square"
           />
@@ -229,7 +229,7 @@ const swiperModules = [Autoplay, Navigation]
               <div class="absolute inset-0 bg-white/20 rounded-full blur-2xl transform scale-110 group-hover:scale-150 group-hover:bg-emerald-400/30 transition-all duration-700"></div>
 
               <NuxtImg
-                  src="/images/topsalon2026.png"
+                  src="/images/topsalon2026.webp"
                   alt="Top Salon 2026 Award"
                   class="h-48 md:h-56 lg:h-64 w-auto object-contain relative z-10 group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"
               />

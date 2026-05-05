@@ -6,7 +6,7 @@ export const useTreatments = () => {
             description: 'Nježna, manualna terapija koja tijelo dovodi u ravnotežu, ublažava bolove i poboljšava cjelokupno funkcioniranje. Preporučuje se za stres, išijas i napetost.',
             price: 'od 45€',
             duration: '30 - 60 min',
-            image: '/images/treatments/emmett.png',
+            image: '/images/treatments/emmett.webp',
             targetAudience: 'Sve dobne skupine',
             content: [
                 {
@@ -37,7 +37,7 @@ export const useTreatments = () => {
             description: 'Nježna, manualna terapija koja tijelo dovodi u ravnotežu, ublažava bolove i poboljšava cjelokupno funkcioniranje. Preporučuje se za stres, išijas i napetost.',
             price: 'od 35€',
             duration: '30 - 60 min',
-            image: '/images/treatments/bowen.jpg',
+            image: '/images/treatments/bowen.webp',
             targetAudience: 'Sve dobne skupine',
             content: [
                 {
@@ -68,7 +68,7 @@ export const useTreatments = () => {
             description: 'Iznimno blaga verzija Bowen terapije prilagođena dojenčadi. Pomaže kod kolika, problema sa spavanjem, probavom i nemirom.',
             price: '20€',
             duration: 'Kratko (prilagođeno bebi)',
-            image: '/images/treatments/baby-bowen.jpg',
+            image: '/images/treatments/baby-bowen.webp',
             targetAudience: 'Bebe do 1 godine starosti',
             content: [
                 {
@@ -98,7 +98,7 @@ export const useTreatments = () => {
             description: 'Ciljana masaža za opuštanje napetih mišića, poboljšanje cirkulacije i ublažavanje kroničnih bolova u leđima i vratu.',
             price: 'od 48€',
             duration: '60 min',
-            image: '/images/treatments/medicinska-masaza.jpg',
+            image: '/images/treatments/medicinska-masaza.webp',
             targetAudience: 'Odrasli',
             content: [
                 {
@@ -131,7 +131,7 @@ export const useTreatments = () => {
             description: 'Napredna tehnologija koja ubrzava oporavak tkiva i do 70%. Izvrsna za sportske ozljede, bolove u zglobovima i upale.',
             price: '25€',
             duration: '30 min',
-            image: '/images/treatments/tecar.jpg',
+            image: '/images/treatments/tecar.webp',
             targetAudience: 'Odrasli i sportaši',
             content: [
                 {
@@ -196,7 +196,7 @@ export const useTreatments = () => {
             description: 'Personalizirani program vježbi vođen od strane stručnjaka, prilagođen vašem trenutnom stanju i ciljevima rehabilitacije.',
             price: '25€',
             duration: '30 min',
-            image: '/images/treatments/vjezbe.jpg',
+            image: '/images/treatments/vjezbe.webp',
             targetAudience: 'Sve dobne skupine',
             content: [
                 {
@@ -237,7 +237,7 @@ export const useTreatments = () => {
             description: 'Specijalizirana manualna tehnika za oslobađanje priraslica i smanjenje zatezanja oko starih i novih ožiljaka.',
             price: '25€',
             duration: '15 - 30 min',
-            image: '/images/treatments/oziljak.jpg',
+            image: '/images/treatments/oziljak.webp',
             targetAudience: 'Odrasli',
             content: [
                 {
@@ -275,7 +275,7 @@ export const useTreatments = () => {
             description: 'Ne-kirurški tretman za pomlađivanje. Tretira rameni pojas, dekolte, vrat i lice, potičući prirodnu proizvodnju kolagena.',
             price: '40€',
             duration: '45 min',
-            image: '/images/treatments/deep-lifting.jpg',
+            image: '/images/treatments/deep-lifting.webp',
             targetAudience: 'Odrasli',
             content: [
                 {
@@ -306,7 +306,7 @@ export const useTreatments = () => {
             description: 'Tretman lica koji koristi radiovalove za zatezanje kože, smanjenje bora i poboljšanje tonusa lica.',
             price: '30€',
             duration: '30 min',
-            image: '/images/treatments/radiofrekvencija.jpg',
+            image: '/images/treatments/radiofrekvencija.webp',
             targetAudience: 'Odrasli',
             content: [
                 {
@@ -337,7 +337,7 @@ export const useTreatments = () => {
             description: 'Inovativna masaža koja se jednim dijelom izvodi s unutarnje strane usne šupljine. Opušta mišiće čeljusti i daje snažan efekt liftinga.',
             price: '25€',
             duration: '20 min',
-            image: '/images/treatments/bukalna.jpg',
+            image: '/images/treatments/bukalna.webp',
             targetAudience: 'Odrasli',
             content: [
                 {

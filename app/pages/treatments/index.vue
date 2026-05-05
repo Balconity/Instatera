@@ -7,25 +7,17 @@ useSeoMeta({
 
   ogTitle: 'Usluge i tretmani | In Statera',
   ogDescription: 'Stručni fizioterapijski tretmani, Bowen terapija, Tecar i medicinske masaže za vaš brži oporavak i povratak u ravnotežu.',
-  ogImage: '/images/hero.jpg',
+  ogImage: '/images/hero.webp',
   ogType: 'website',
   ogUrl: 'https://instatera.hr/treatments',
 
   twitterCard: 'summary_large_image',
   twitterTitle: 'Usluge i tretmani | In Statera',
   twitterDescription: 'Stručni fizioterapijski tretmani i masaže za vaš brži oporavak i život u ravnoteži.',
-  twitterImage: '/images/hero.jpg'
+  twitterImage: '/images/hero.webp'
 })
 
 const treatments = useTreatments()
-
-const footerBackgroundUrl = computed(() => {
-  return img('/images/prostor.jpg', {
-    width: 1920,
-    quality: 80,
-    format: 'webp'
-  })
-});
 </script>
 
 <template>

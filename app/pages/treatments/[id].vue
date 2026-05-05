@@ -18,7 +18,7 @@ useSeoMeta({
   ogDescription: () => treatment.value
       ? `Zanima vas ${treatment.value.title}? Pogledajte detalje, cijenu i trajanje te rezervirajte svoj termin u našem centru.`
       : 'Traženi tretman nije pronađen.',
-  ogImage: () => treatment.value ? treatment.value.image : '/images/prostor.jpg',
+  ogImage: () => treatment.value ? treatment.value.image : '/images/prostor.webp',
   ogType: 'article',
   ogUrl: () => `https://instatera.hr/treatments/${route.params.id}`,
 
@@ -27,7 +27,7 @@ useSeoMeta({
   twitterDescription: () => treatment.value
       ? `Zanima vas ${treatment.value.title}? Pogledajte detalje i rezervirajte termin.`
       : 'Traženi tretman nije pronađen.',
-  twitterImage: () => treatment.value ? treatment.value.image : '/images/prostor.jpg',
+  twitterImage: () => treatment.value ? treatment.value.image : '/images/prostor.webp',
 })
 </script>
 
