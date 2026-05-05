@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 useSeoMeta({
   title: 'Uvjeti korištenja',
   description: 'Pravila i uvjeti korištenja web stranice i usluga In Statera centra.',
@@ -8,7 +7,8 @@ useSeoMeta({
 </script>
 
 <template>
-  <UContainer class="py-12 max-w-4xl">
+  <div class="pt-32 sm:pt-40 pb-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
     <div class="mb-10 border-b border-gray-200 dark:border-gray-800 pb-6">
       <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
         Uvjeti korištenja
@@ -41,7 +41,7 @@ useSeoMeta({
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">3. Poklon bonovi</h2>
         <p class="mb-2">Za poklon bonove naručene putem naše web stranice vrijede sljedeća pravila:</p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>Poklon bonovi vrijede <strong>6 mjeseci</strong> od datuma izdavanja, osim ako nije drugačije naznačeno na samom bonu.</li>
+          <li>Poklon bonovi vrijede <strong>3 mjeseca</strong> od datuma izdavanja, osim ako nije drugačije naznačeno na samom bonu.</li>
           <li>Bon se mora predočiti prilikom dolaska na tretman.</li>
           <li>Poklon bonovi se <strong>ne mogu zamijeniti za gotovinu</strong>.</li>
           <li>Ukoliko je vrijednost odabranog tretmana manja od vrijednosti bona, razlika se ne vraća u novcu, već se može iskoristiti za buduće tretmane.</li>
@@ -70,5 +70,5 @@ useSeoMeta({
       </section>
 
     </div>
-  </UContainer>
+  </div>
 </template>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 useSeoMeta({
   title: 'Politika privatnosti',
   description: 'Informacije o zaštiti osobnih podataka i privatnosti korisnika In Statera centra.',
@@ -8,7 +7,8 @@ useSeoMeta({
 </script>
 
 <template>
-  <UContainer class="py-12 max-w-4xl">
+  <div class="pt-32 sm:pt-40 pb-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
     <div class="mb-10 border-b border-gray-200 dark:border-gray-800 pb-6">
       <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
         Politika privatnosti
@@ -80,12 +80,12 @@ useSeoMeta({
         </p>
         <div class="mt-4 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
           <p><strong>In Statera</strong></p>
-          <p>E-mail: <a href="mailto:vas@email.com" class="text-primary hover:underline">vas@email.com</a></p>
-          <p>Telefon: <a href="tel:+385910000000" class="text-primary hover:underline">+385 91 000 0000</a></p>
-          <p>Adresa: [Unesite punu adresu vašeg salona, Grad]</p>
+          <p>E-mail: <a href="mailto:fizio.instatera@gmail.com" class="text-emerald-600 hover:underline">fizio.instatera@gmail.com</a></p>
+          <p>Telefon: <a href="tel:+385955053943" class="text-emerald-600 hover:underline">+385 95 505 3943</a></p>
+          <p>Adresa: III Ravnice 14, 10000, Zagreb</p>
         </div>
       </section>
 
     </div>
-  </UContainer>
+  </div>
 </template>
