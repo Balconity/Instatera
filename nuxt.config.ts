@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'aws-amplify'
   },
+  ssr: true,
   app: {
     head: {
       script: [
@@ -27,7 +28,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     '@nuxt/ui',
-    '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
     'nuxt-gtag'
   ],
@@ -40,4 +40,10 @@ export default defineNuxtConfig({
     gmailAppPassword: process.env.SMTP_PASS,
     contactEmail: process.env.CONTACT_EMAIL
   },
+  sitemap: {
+    exclude: [
+      '/politika-privatnosti',
+      '/uvjeti-koristenja'
+    ]
+  }
 })

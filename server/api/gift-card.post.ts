@@ -57,7 +57,7 @@ export default defineEventHandler(async (event) => {
     try {
         await transporter.sendMail({
             from: `"In Statera Web" <${config.gmailUser}>`,
-            to: [config.contactEmail as string, 'tomi.levkus@gmail.com'],
+            to: [config.contactEmail as string, 'fizio.instatera@gmail.com'],
             replyTo: email,
             subject: `Novi upit za poklon bon: ${fromName}`,
             html: `
