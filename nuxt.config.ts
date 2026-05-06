@@ -42,8 +42,8 @@ export default defineNuxtConfig({
   },
   sitemap: {
     exclude: [
-      '/politika-privatnosti',
-      '/uvjeti-koristenja'
+      '/privacy-policy',
+      '/terms-of-service'
     ]
   }
 })
